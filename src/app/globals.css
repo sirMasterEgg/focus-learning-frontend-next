@@ -2,26 +2,196 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer base {
+    html {
+        font-family: "Helvetica", system-ui, sans-serif;
+    }
+
+    :root:has(.dialog[open]) {
+        overflow: hidden;
+        scrollbar-gutter: stable;
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 999px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #999;
+        border-radius: 999px;
+    }
+
+    .gallery {
+        background-color: rgba(0,0,0,0);
+        -webkit-background-clip: text;
+        /* uncomment following line to see the trick in actions */
+        /* -webkit-text-fill-color: transparent;*/
+        transition: background-color .5s;
+    }
+    .gallery:hover {
+        background-color: rgba(0,0,0,0.18);
+    }
+    .gallery::-webkit-scrollbar-thumb {
+        background-color: inherit;
+    }
+    .gallery::-webkit-scrollbar-track {
+        display: none;
+    }
+
+    .truncate-overflow {
+        position: relative;
+        max-height: calc(1.5rem * 4);
+        overflow: hidden;
+    }
+    .truncate-overflow::before {
+        position: absolute;
+        content: "";
+        inset-block-end: 0;
+        inset-inline-end: 0;
+    }
+    .truncate-overflow::after {
+        content: "";
+        position: absolute;
+        inset-inline-end: 0;
+        width: 1rem;
+        height: 1rem;
+        background: white;
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-100 to-secondary-100;
+    }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .underline-animation{
+        position: relative;
+    }
+
+    .underline-animation::after {
+        content: "";
+        width: calc(100% + 1rem);
+        height: 2px;
+        background-color: theme('colors.secondary.100');
+        position: absolute;
+        bottom: 0;
+        left: -0.5rem;
+        opacity: 0;
+        transition: opacity 500ms;
+    }
+
+    .underline-animation:hover::after, .underline-animation.hovered::after {
+        opacity: 1;
+    }
+
+    .gradient-background {
+        background: linear-gradient(
+                144deg,
+                rgba(45, 189, 110, 0.80) 0%,
+                rgba(35.56, 179.56, 147.23, 0.80) 26%,
+                rgba(25.66, 169.66, 186.28, 0.80) 54%,
+                rgba(17.02, 161.02, 220.36, 0.80) 78%,
+                rgba(9, 153, 252, 0.80) 100%
+        );
+    }
+
+
+    .custom-select {
+        position: relative;
+    }
+
+    .select-selected {
+        cursor: pointer;
+        user-select: none;
+        position: relative;
+    }
+
+    .select-items {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+    }
+
+    .select-items div {
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .select-items div:hover, .same-as-selected {
+        background-color: rgba(178, 220, 253, 0.5);
+    }
+
+    .dialog {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        z-index: 100;
+        max-width: none;
+        max-height: none;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        visibility: hidden;
+        opacity: 0;
+        overscroll-behavior: contain;
+        overflow: hidden;
+        transition: all 0.5s ease;
+    }
+    .dialog[open] {
+        @apply visible opacity-100
+    }
+    .dialog::backdrop {
+        background: #0006;
+    }
+
+    .separator {
+        display: flex;
+        gap: 4rem;
+        align-items: center;
+        text-align: center;
+        color: theme('colors.text.60');
+    }
+
+    .separator::before,
+    .separator::after {
+        content: '';
+        flex: 1;
+        border-bottom: 2px solid theme('colors.text.60');
+    }
+
+    .separator:not(:empty)::before {
+        margin-right: .25em;
+    }
+
+    .separator:not(:empty)::after {
+        margin-left: .25em;
+    }
+
+    .floating-whatsapp::before {
+        position: absolute;
+        right: 90%;
+        width: 15.75rem;
+        background: theme('colors.floating-whatsapp');
+        @apply rounded-l-lg px-4 py-1 opacity-0;
+    }
 }
