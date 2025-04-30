@@ -1,6 +1,6 @@
 import TextAvatar from "@/app/_components/TextAvatar";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";
 import SignOutButton from "@/app/_components/client-components/auth/SignOutButton";
 import Link from "next/link";
 

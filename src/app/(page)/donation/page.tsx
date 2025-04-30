@@ -6,13 +6,11 @@ import Script from "next/script";
 import axios from "axios";
 import { GetDetailsDonationResponse } from "@/app/types/type";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";
 
-export default async function Donate(
-  props: {
-    searchParams: Promise<{ donateId: string }>;
-  }
-) {
+export default async function Donate(props: {
+  searchParams: Promise<{ donateId: string }>;
+}) {
   const searchParams = await props.searchParams;
   const session = await getServerSession(authOptions);
 

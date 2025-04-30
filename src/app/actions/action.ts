@@ -10,18 +10,23 @@ import AxiosInstance from "@/utils/axiosInstance";
 import { revalidatePath } from "next/cache";
 import { AxiosError } from "axios";
 import { getToken } from "next-auth/jwt";
-import { cookies, headers, type UnsafeUnwrappedCookies, type UnsafeUnwrappedHeaders } from "next/headers";
+import {
+  cookies,
+  headers,
+  type UnsafeUnwrappedCookies,
+  type UnsafeUnwrappedHeaders,
+} from "next/headers";
 import { NextRequest } from "next/server";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";
 
 const getSession = () => {
   return Promise.all([
     getServerSession(authOptions),
     getToken({
       req: {
-        headers: (headers() as unknown as UnsafeUnwrappedHeaders),
-        cookies: (cookies() as unknown as UnsafeUnwrappedCookies),
+        headers: headers() as unknown as UnsafeUnwrappedHeaders,
+        cookies: cookies() as unknown as UnsafeUnwrappedCookies,
       } as unknown as NextRequest,
     }),
   ]);
