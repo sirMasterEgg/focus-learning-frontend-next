@@ -2,11 +2,12 @@ import { atob } from "node:buffer";
 import axios from "axios";
 import { redirect } from "next/navigation";
 
-export default async function VerifyPage({
-  searchParams,
-}: {
-  searchParams: { redirect: string };
-}) {
+export default async function VerifyPage(
+  props: {
+    searchParams: Promise<{ redirect: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const redirectUrl = atob(searchParams.redirect);
 
   try {

@@ -3,11 +3,17 @@ import Footer from "@/app/_components/Footer";
 import { articleBlogData } from "@/app/assets/user-data";
 import SquareArticle from "@/app/_components/client-components/blog/SquareArticle";
 
-export default async function DetailsBlog({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) {
+export default async function DetailsBlog(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    slug
+  } = params;
+
   const article = articleBlogData.find((article) => article.slug === slug);
 
   let Article = null;

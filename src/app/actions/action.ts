@@ -10,7 +10,7 @@ import AxiosInstance from "@/utils/axiosInstance";
 import { revalidatePath } from "next/cache";
 import { AxiosError } from "axios";
 import { getToken } from "next-auth/jwt";
-import { cookies, headers } from "next/headers";
+import { cookies, headers, type UnsafeUnwrappedCookies, type UnsafeUnwrappedHeaders } from "next/headers";
 import { NextRequest } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
@@ -20,8 +20,8 @@ const getSession = () => {
     getServerSession(authOptions),
     getToken({
       req: {
-        headers: headers(),
-        cookies: cookies(),
+        headers: (headers() as unknown as UnsafeUnwrappedHeaders),
+        cookies: (cookies() as unknown as UnsafeUnwrappedCookies),
       } as unknown as NextRequest,
     }),
   ]);

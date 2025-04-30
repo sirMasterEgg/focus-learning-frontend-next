@@ -8,11 +8,12 @@ import { GetDetailsDonationResponse } from "@/app/types/type";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
-export default async function Donate({
-  searchParams,
-}: {
-  searchParams: { donateId: string };
-}) {
+export default async function Donate(
+  props: {
+    searchParams: Promise<{ donateId: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const session = await getServerSession(authOptions);
 
   if (!session) {

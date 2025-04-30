@@ -12,13 +12,19 @@ import { redirect } from "next/navigation";
 const window = new JSDOM("").window;
 const purify = DOMPurify(window);
 
-export default async function DetailsDonation({
-  params: { donateId },
-}: {
-  params: {
-    donateId: string;
-  };
-}) {
+export default async function DetailsDonation(
+  props: {
+    params: Promise<{
+      donateId: string;
+    }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    donateId
+  } = params;
+
   const { data: detailsDonation } = await axios.get<GetDetailsDonationResponse>(
     process.env.NEXT_URL + "/api/donations/" + donateId
   );

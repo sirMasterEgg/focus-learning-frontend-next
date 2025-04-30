@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { FaRegCheckCircle, FaRegCreditCard } from "react-icons/fa";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type JSX } from "react";
 import WhiteLogo from "@/app/assets/navbar/Main Logo with Name Vector.svg";
 import { mastercardLogo, popUp, qris, visaLogo } from "@/app/assets/others";
 import CurrencyInput from "@/app/_components/client-components/donation/CurrencyInput";
