@@ -1,20 +1,35 @@
-import { Session as Sess, User as Usr } from "next-auth";
+import { Session as NextAuthSession, User as NextAuthUser } from "next-auth";
+import { JWT as NextAuthJwt } from "next-auth/jwt";
+
+export interface CustomUser {
+  id: string;
+  name: string;
+  title: string;
+  avatar: string | null;
+  email: string;
+  role: string;
+  email_verified_at: string | null;
+  created_at: string;
+  updated_at: string;
+  is_oauth: boolean;
+  oauth_provider: string | null;
+  already_set_password: boolean;
+}
 
 declare module "next-auth" {
-  interface Session extends Sess {
-    user: User;
+  interface User extends NextAuthUser {
+    user: CustomUser;
     token: string;
   }
-  interface User extends Usr {
-    user: {
-      id: string;
-      email: string;
-      email_verified_at: string | null;
-      role: string;
-      created_at: string;
-      updated_at: string;
-    };
+  interface Session extends NextAuthSession {
+    user: CustomUser;
     token: string;
   }
-  interface JWT extends User {}
+}
+
+declare module "next-auth/jwt" {
+  interface JWT extends NextAuthJwt {
+    user: CustomUser;
+    token: string;
+  }
 }

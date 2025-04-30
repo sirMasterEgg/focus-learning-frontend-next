@@ -2,7 +2,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FaAngleDown } from "react-icons/fa6";
-import { integratedTherapy1 } from "@/app/assets/services";
+import { integratedTherapy1, integratedTherapy3 } from "@/app/assets/services";
+import { Collapse } from "@/app/_components/client-components/Collapse";
 
 export default function IntegratedTherapyCollapse() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -12,9 +13,22 @@ export default function IntegratedTherapyCollapse() {
   };
 
   return (
-    <div className="flex flex-row gap-10">
-      <div className="w-40">
-        <Image width={300} height={300} src={integratedTherapy1} alt="" />
+    <div className="flex flex-col lg:flex-row gap-10">
+      <div className="w-full flex flex-row gap-5 lg:block lg:w-40">
+        <Image
+          width={300}
+          height={300}
+          className="w-[calc(50%_-_0.625rem)] lg:w-40 object-cover"
+          src={integratedTherapy1}
+          alt=""
+        />
+        <Image
+          width={300}
+          height={300}
+          className="w-[calc(50%_-_0.625rem)] lg:w-0 lg:hidden object-cover"
+          src={integratedTherapy3}
+          alt=""
+        />
       </div>
       <div className="flex flex-1 flex-col gap-5">
         <p>
@@ -51,10 +65,12 @@ export default function IntegratedTherapyCollapse() {
             <li>Personalized approach</li>
           </ul>
         </div>
-        <div
-          className={`transition-all duration-500 overflow-y-hidden ${
-            isOpen ? "max-h-screen ease-in" : "max-h-0 ease-out"
-          } flex flex-col gap-5`}
+        <Collapse
+          isOpen={isOpen}
+          className={`flex flex-col gap-5`}
+          // className={`transition-all duration-500 overflow-y-hidden ${
+          //   isOpen ? "max-h-full ease-in" : "max-h-0 ease-out"
+          // } flex flex-col gap-5`}
         >
           <p>
             Our integrated therapy program includes sensory integration,
@@ -119,7 +135,7 @@ export default function IntegratedTherapyCollapse() {
               </li>
             </ul>
           </div>
-        </div>
+        </Collapse>
         <div className="inline-flex w-full flex-row justify-end">
           <svg width="0" height="0">
             <linearGradient

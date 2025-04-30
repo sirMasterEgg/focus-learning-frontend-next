@@ -46,18 +46,20 @@ export default function TestimonialCard() {
             )}`}
           >
             <div
-              className={`rounded-xl w-[35rem] ${testimonial.cardColor} relative py-10 px-8`}
+              className={`rounded-xl w-[20rem] max-h-[18rem] lg:max-h-full lg:w-[35rem] ${testimonial.cardColor} relative py-10 px-8`}
             >
-              <div className="p-[2px] rounded-[14px] bg-neutral-100 absolute top-0 -translate-y-[70%] left-[calc(50%_-_100px)] drop-shadow-2xl shadow-2xl">
+              <div className="p-[2px] rounded-[calc(0.75rem_+_2px)] bg-neutral-100 absolute top-0 left-[calc(50%_-_5rem)] -translate-y-[70%] lg:left-[calc(50%_-_100px)] drop-shadow-2xl shadow-2xl">
                 <Image
                   width={200}
-                  height={128}
-                  className="rounded-xl object-cover w-[12.5rem] h-32"
+                  height={200}
+                  className="rounded-xl object-cover w-[10rem] lg:w-[12.5rem] h-32"
                   src={testimonial.image.url}
                   alt={testimonial.image.alt}
                 />
               </div>
-              <p className="text-center mt-4">{testimonial.testimonial}</p>
+              <p className="text-center mt-4 text-sm">
+                {testimonial.testimonial}
+              </p>
               <div className="mt-5 flex flex-col items-center justify-center text-neutral-100">
                 <h2 className="text-lg font-bold">{testimonial.name}</h2>
 

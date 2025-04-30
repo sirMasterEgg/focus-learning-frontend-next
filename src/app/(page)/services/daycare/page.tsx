@@ -14,19 +14,19 @@ export default function Daycare() {
   return (
     <>
       <Navbar />
-      <main className="px-16">
+      <main className="px-6 lg:px-16">
         <div className="mt-10 w-full flex justify-center items-center">
           <Image
             width={1280}
             height={300}
             src={dayCareTopBanner}
-            className="w-full"
+            className="w-full h-36 lg:h-auto object-cover"
             priority={true}
             alt="Banner Image"
           />
         </div>
-        <div className="mt-20 flex flex-col gap-10">
-          <h1 className="font-bold text-2xl">
+        <div className="mt-10 lg:mt-20 flex flex-col gap-10">
+          <h1 className="font-bold text-2xl text-center lg:text-left">
             <span className="text-gradient">
               “ Growing Together, Learning Together ”
             </span>
@@ -39,9 +39,27 @@ export default function Daycare() {
             </p>
           </div>
           <div className="flex flex-row gap-8 justify-center">
-            <Image width={300} height={300} src={dayCare2} alt="" />
-            <Image width={300} height={300} src={dayCare3} alt="" />
-            <Image width={300} height={300} src={dayCare1} alt="" />
+            <Image
+              width={300}
+              height={300}
+              className="size-0 lg:size-[calc((100%_-_2_*_2rem)_/_3)] object-cover"
+              src={dayCare2}
+              alt=""
+            />
+            <Image
+              width={300}
+              height={300}
+              className="size-52 lg:size-[calc((100%_-_2_*_2rem)_/_3)] object-cover"
+              src={dayCare3}
+              alt=""
+            />
+            <Image
+              width={300}
+              height={300}
+              className="size-0 lg:size-[calc((100%_-_2_*_2rem)_/_3)] object-cover"
+              src={dayCare1}
+              alt=""
+            />
           </div>
           <div className="flex flex-col gap-8">
             <div className="w-full">
@@ -121,9 +139,26 @@ export default function Daycare() {
               We believe that a balanced approach to learning and play is
               essential for a {"child's"} holistic development.
             </div>
+
+            <div className="flex lg:hidden flex-row gap-8 justify-center">
+              <Image
+                width={300}
+                height={300}
+                className="size-[calc((100%_-_1_*_2rem)_/_2)] object-cover"
+                src={dayCare2}
+                alt=""
+              />
+              <Image
+                width={300}
+                height={300}
+                className="size-[calc((100%_-_1_*_2rem)_/_2)] object-cover"
+                src={dayCare1}
+                alt=""
+              />
+            </div>
           </div>
-          <div className="px-16 mt-10">
-            <div className="w-2/3 mx-auto flex flex-col items-center justify-center gap-3">
+          <div className="lg:px-16 mt-10">
+            <div className="w-11/12 mb-10 lg:mb-0 lg:w-2/3 mx-auto flex flex-col items-center justify-center gap-3">
               <div className="flex flex-col">
                 <span className="text-gradient font-bold text-xl text-center">
                   {"Let's"} make your {"child's"} day brighter.
@@ -140,8 +175,8 @@ export default function Daycare() {
               </LinkWithGradientBackground>
             </div>
           </div>
-          <hr className="border-t-[1.5px] h-1.5 my-10" />
-          <div className="flex flex-row justify-center gap-16 mb-20">
+          <hr className="hidden lg:block border-t-[1.5px] h-1.5 my-10" />
+          <div className="hidden lg:flex flex-row justify-center gap-16 mb-20">
             <Link
               href="/services/integrated-therapy"
               className="border border-secondary-100 rounded-md px-6 py-2 text-text-60 w-1/4 inline-flex justify-center transition duration-500 hover:bg-text-40 hover:text-secondary-100"

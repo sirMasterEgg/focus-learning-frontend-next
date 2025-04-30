@@ -38,10 +38,10 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="px-16">
+      <main className="px-6 lg:px-16">
         <BannerHome />
         <div className="inline-flex flex-col justify-center items-center w-full mt-20 gap-10">
-          <div className="inline-flex flex-col items-center justify-center">
+          <div className="inline-flex flex-col items-center justify-center text-center">
             <h1 className="text-3xl font-bold">
               Your <span className="text-gradient">Child’s Future</span>,
             </h1>
@@ -67,17 +67,17 @@ export default function Home() {
             Learn More
           </LinkWithGradientBackground>
         </div>
-        <div className="mt-20 grid grid-cols-3 gap-5">
+        <div className="mt-20 flex flex-col lg:grid lg:grid-cols-3 gap-5">
           {data.service.map((service, index) => (
             <div key={index} className="w-full relative">
               <Image
                 width={400}
                 height={400}
                 src={service.imageUrl}
-                className="w-full h-full object-cover"
+                className="w-full h-36 lg:h-full object-cover"
                 alt={service.imageAlt}
               />
-              <div className="absolute opacity-0 bg-black/20 transition duration-500 w-full h-full top-0 left-0 hover:opacity-100 inline-flex justify-center items-end">
+              <div className="absolute opacity-0 bg-black/20 transition duration-500 w-full h-full top-0 left-0 hover:opacity-100 inline-flex justify-center items-center lg:items-end">
                 <span className="text-white text-2xl font-bold p-5">
                   {service.title}
                 </span>
@@ -86,7 +86,7 @@ export default function Home() {
           ))}
         </div>
         <div className="inline-flex flex-col justify-center items-center w-full mt-20 gap-10">
-          <div className="inline-flex flex-col items-center justify-center">
+          <div className="inline-flex flex-col items-center justify-center text-center">
             <h1 className="text-3xl font-bold">
               Therapy That <span className="text-gradient">Supports</span>
             </h1>

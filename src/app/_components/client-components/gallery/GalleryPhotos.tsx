@@ -106,11 +106,14 @@ export default function GalleryPhotos() {
           Our Activities
         </span>
         <div className="bg-team-bg">
-          <div className="w-full max-h-[33rem] p-16 flex gap-5 transition-all duration-500 overflow-x-auto gallery">
+          <div className="w-full max-h-[33rem] p-6 lg:p-16 flex flex-col lg:flex-row gap-5 transition-all duration-500 overflow-x-auto gallery">
             {galleryImage.map((image, index) => {
               if (index % 3 === 0) {
                 return (
-                  <div key={image.id} className="w-1/2 h-auto flex-shrink-0">
+                  <div
+                    key={image.id}
+                    className="w-full lg:w-1/2 h-auto flex-shrink-0"
+                  >
                     <div className="grid grid-cols-2 gap-5 h-full">
                       <Image
                         width={100}
@@ -149,7 +152,7 @@ export default function GalleryPhotos() {
               }
               return null;
             })}
-            <div className="w-1/2 h-auto flex-shrink-0">
+            <div className="w-full lg:w-1/2 h-auto flex-shrink-0">
               <div className="grid grid-cols-3 gap-5 h-full">
                 {gridImage.map((image) => (
                   <Image

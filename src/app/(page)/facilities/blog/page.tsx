@@ -8,7 +8,7 @@ export default function Blog() {
   return (
     <>
       <Navbar />
-      <main className="px-16">
+      <main className="px-6 lg:px-16">
         <div className="mt-10 w-full">
           <h1 className="text-text-60 text-3xl">Article Blog</h1>
         </div>
@@ -25,7 +25,7 @@ export default function Blog() {
                 slug={article.slug}
               />
             ))}
-          <div className="grid grid-cols-3 gap-10 mt-10 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-10 mb-20">
             {articleBlogData
               .filter((article) => !article.mainArticle)
               .map((article) => (

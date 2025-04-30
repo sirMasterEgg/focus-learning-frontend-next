@@ -1,5 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import Image, { ImageProps } from "next/image";
+import Link from "next/link";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -49,7 +50,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </>
     ),
     a: (props) => (
-      <a
+      <Link
         {...props}
         style={{
           textDecoration: "underline",

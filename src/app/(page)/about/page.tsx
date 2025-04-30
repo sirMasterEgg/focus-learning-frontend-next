@@ -160,19 +160,19 @@ export default function About() {
   return (
     <>
       <Navbar />
-      <main className="px-16">
+      <main className="px-6 lg:px-16">
         <div className="mt-10 w-full flex justify-center items-center">
           <Image
             width={1280}
             height={300}
             src={banner}
-            className="w-full"
+            className="w-full h-36 lg:h-auto object-cover"
             priority={true}
             alt="Banner Image"
           />
         </div>
-        <div className="flex flex-row gap-10 mt-10">
-          <div className="w-48 h-48">
+        <div className="space-y-5 mt-10">
+          <div className="w-48 h-48 float-left mr-5">
             <Image
               width={300}
               height={300}
@@ -181,31 +181,29 @@ export default function About() {
               alt="Banner Image"
             />
           </div>
-          <div className="flex-1">
-            <p>
-              <span className="font-bold text-card-1">
-                Focus Learning Support Center
-              </span>{" "}
-              has been dedicated to empowering exceptional children and
-              adolescents since 2015. Originally founded as Full Heart Center,
-              our institution has evolved over the years to become a specialized
-              educational center focused on unlocking the full potential of
-              every child.
-            </p>
-            <p className="mt-5">
-              Under the visionary leadership of the{" "}
-              <span className="font-bold text-card-1 italic">late Dwi Ana</span>
-              , we underwent a rebranding in 2020 to better reflect our
-              commitment to providing comprehensive and innovative therapeutic
-              approaches. Today, Focus Learning Support Center is a beacon of
-              hope for families seeking specialized care for their children with
-              special needs.
-            </p>
-          </div>
+          <p>
+            <span className="font-bold text-card-1">
+              Focus Learning Support Center
+            </span>{" "}
+            has been dedicated to empowering exceptional children and
+            adolescents since 2015. Originally founded as Full Heart Center, our
+            institution has evolved over the years to become a specialized
+            educational center focused on unlocking the full potential of every
+            child.
+          </p>
+          <p>
+            Under the visionary leadership of the{" "}
+            <span className="font-bold text-card-1 italic">late Dwi Ana</span>,
+            we underwent a rebranding in 2020 to better reflect our commitment
+            to providing comprehensive and innovative therapeutic approaches.
+            Today, Focus Learning Support Center is a beacon of hope for
+            families seeking specialized care for their children with special
+            needs.
+          </p>
         </div>
-        <div className="mt-20 flex flex-row gap-5">
+        <div className="mt-20 flex flex-col lg:flex-row gap-5">
           <div
-            className="w-1/2 h-72 flex flex-col justify-end items-start px-10 py-5 gap-3"
+            className="w-full text-center lg:text-left lg:w-1/2 h-72 flex flex-col justify-end items-center lg:items-start px-10 py-5 gap-3"
             style={{
               backgroundImage: `url('${visionBackground.src}')`,
               backgroundSize: "cover",
@@ -213,7 +211,7 @@ export default function About() {
               backgroundPosition: "center",
             }}
           >
-            <h1 className="text-2xl font-bold text-secondary-100">
+            <h1 className="text-2xl font-bold text-secondary-100 text-center lg:text-left">
               Our Vision
             </h1>
             <span className="text-neutral-100 italic">
@@ -222,7 +220,7 @@ export default function About() {
             </span>
           </div>
           <div
-            className="w-1/2 h-72 flex flex-col justify-end items-start px-10 py-5 gap-3"
+            className="w-full text-center lg:text-left lg:w-1/2 h-72 flex flex-col justify-end items-center lg:items-start px-10 py-5 gap-3"
             style={{
               backgroundImage: `url('${missionBackground.src}')`,
               backgroundSize: "cover",
@@ -230,7 +228,9 @@ export default function About() {
               backgroundPosition: "center",
             }}
           >
-            <h1 className="text-2xl font-bold text-card-1">Our Mission</h1>
+            <h1 className="text-2xl font-bold text-card-1 text-center lg:text-left">
+              Our Mission
+            </h1>
             <span className="text-neutral-100 italic">
               Supporting children and adolescents to grow and develop by
               providing comprehensive and optimal training and education.
@@ -242,7 +242,7 @@ export default function About() {
             <span className="text-gradient">Core Values</span>
           </h1>
           <div className="flex flex-row w-full gap-5 h-80">
-            <div className="w-1/2 flex flex-col gap-5">
+            <div className="w-full lg:w-1/2 flex flex-col gap-5">
               {aboutPageCoreValues.map((value, index) => (
                 <div key={index} className="flex flex-row items-center gap-3">
                   <div className="w-8">
@@ -255,7 +255,7 @@ export default function About() {
                 </div>
               ))}
             </div>
-            <div className="w-1/2">
+            <div className="lg:w-1/2 hidden lg:block">
               <Image
                 className="w-full h-full object-cover object-center"
                 width={1000}
@@ -270,8 +270,8 @@ export default function About() {
           <h1 className="text-2xl font-bold">
             <span className="text-gradient">Our Team</span>
           </h1>
-          <div className="bg-team-bg w-full px-14 py-10 grid grid-cols-8 gap-8">
-            <div className="w-full h-fit col-span-8">
+          <div className="bg-team-bg w-full px-6 lg:px-14 py-10 flex flex-row flex-wrap gap-5 justify-center">
+            <div className="w-full h-fit">
               <Image
                 className="w-full object-cover rounded-lg"
                 src={bigTeams}
@@ -283,19 +283,15 @@ export default function About() {
             {teachers.map((teacher, index) => (
               <div
                 key={index}
-                className={`${
-                  index % 8 === 0 && index !== 0 ? "col-start-2 " : ""
-                }flex flex-col items-center justify-start gap-2`}
+                className={`w-24 lg:w-40 flex-shrink-0 flex flex-col items-center justify-start gap-2`}
               >
-                <div className="w-24 h-24 rounded-full overflow-hidden">
-                  <Image
-                    width={68}
-                    height={68}
-                    className={`w-full h-full object-cover ${teacher.image.position}`}
-                    src={teacher.image.url}
-                    alt={teacher.image.alt}
-                  />
-                </div>
+                <Image
+                  width={68}
+                  height={68}
+                  className={`size-16 lg:size-24 rounded-full shadow-xl object-cover ${teacher.image.position}`}
+                  src={teacher.image.url}
+                  alt={teacher.image.alt}
+                />
                 <span className="font-bold text-lg text-center">
                   {teacher.name}
                 </span>
@@ -304,43 +300,41 @@ export default function About() {
                 </span>
               </div>
             ))}
-            <div
-              className={`col-start-3 translate-x-3/4 flex flex-col items-center justify-start gap-2`}
-            >
-              <div className="w-48 h-48 rounded-full overflow-hidden">
-                <Image
-                  width={68}
-                  height={68}
-                  className={`w-full h-full object-cover ${teachers[0].image.position}`}
-                  src={teachers[0].image.url}
-                  alt={teachers[0].image.alt}
-                />
+            <div className="w-full flex flex-row gap-10 items-center justify-center">
+              <div className={`flex flex-col items-center justify-start gap-2`}>
+                <div className="size-36 lg:size-48 rounded-full overflow-hidden">
+                  <Image
+                    width={68}
+                    height={68}
+                    className={`w-full h-full object-cover ${teachers[0].image.position}`}
+                    src={teachers[0].image.url}
+                    alt={teachers[0].image.alt}
+                  />
+                </div>
+                <span className="font-bold text-lg text-center">
+                  {teachers[0].name}
+                </span>
+                <span className="text-secondary-100 text-center">
+                  {teachers[0].position}
+                </span>
               </div>
-              <span className="font-bold text-lg text-center">
-                {teachers[0].name}
-              </span>
-              <span className="text-secondary-100 text-center">
-                {teachers[0].position}
-              </span>
-            </div>
-            <div
-              className={`col-start-6 -translate-x-3/4 flex flex-col items-center justify-start gap-2`}
-            >
-              <div className="w-48 h-48 rounded-full overflow-hidden">
-                <Image
-                  width={68}
-                  height={68}
-                  className={`w-full h-full object-cover ${teachers[0].image.position}`}
-                  src={teachers[0].image.url}
-                  alt={teachers[0].image.alt}
-                />
+              <div className={`flex flex-col items-center justify-start gap-2`}>
+                <div className="size-36 lg:size-48 rounded-full overflow-hidden">
+                  <Image
+                    width={68}
+                    height={68}
+                    className={`w-full h-full object-cover ${teachers[0].image.position}`}
+                    src={teachers[0].image.url}
+                    alt={teachers[0].image.alt}
+                  />
+                </div>
+                <span className="font-bold text-lg text-center">
+                  {teachers[0].name}
+                </span>
+                <span className="text-secondary-100 text-center">
+                  {teachers[0].position}
+                </span>
               </div>
-              <span className="font-bold text-lg text-center">
-                {teachers[0].name}
-              </span>
-              <span className="text-secondary-100 text-center">
-                {teachers[0].position}
-              </span>
             </div>
           </div>
         </div>

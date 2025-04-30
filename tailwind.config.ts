@@ -1,4 +1,4 @@
-import type {Config} from "tailwindcss";
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -37,8 +37,15 @@ const config: Config = {
           4: "#00bec1",
           5: "#35d2b3",
           6: "#00BEC180",
+          donation: "#DAEEFE",
         },
         "floating-whatsapp": "#E1F4D9",
+        "avatar-gray": "#A4ABB7",
+        progress: "#0999FC",
+        "progress-back": "#D9D9D9",
+        sidebar: {
+          100: "#E1F4D9",
+        },
       },
     },
   },

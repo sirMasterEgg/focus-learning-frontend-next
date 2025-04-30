@@ -73,6 +73,10 @@
     .text-gradient {
         @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-100 to-secondary-100;
     }
+
+    .input {
+        @apply border rounded p-2 ring-0 outline-1 outline-gray-400 h-10;
+    }
 }
 
 @layer utilities {

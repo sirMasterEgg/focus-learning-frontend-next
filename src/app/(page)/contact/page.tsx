@@ -11,13 +11,13 @@ export default function Contact() {
   return (
     <>
       <Navbar />
-      <main className="px-16">
+      <main className="px-6 lg:px-16">
         <div className="mt-10 w-full flex justify-center items-center">
           <Image
             width={1280}
             height={400}
             src={banner}
-            className="w-full"
+            className="w-full h-36 lg:h-auto object-cover"
             alt="Banner Image"
           />
         </div>
@@ -35,15 +35,43 @@ export default function Contact() {
         </div>
         <div className="mt-20 flex flex-col gap-5">
           <span className="text-card-1 text-xl font-bold">Contact Us</span>
-          <div className="flex flex-row gap-5">
+          <div className="flex flex-col lg:flex-row gap-5">
             <div className="grow">
               <ContactForm />
             </div>
+            <div className="lg:hidden inline-flex flex-col justify-center items-center w-full gap-1.5">
+              <svg width="0" height="0">
+                <linearGradient
+                  id="whatsapp-color"
+                  x1="100%"
+                  y1="100%"
+                  x2="0%"
+                  y2="0%"
+                >
+                  <stop stopColor="#1FAF38" offset="0%" />
+                  <stop stopColor="#60D669" offset="100%" />
+                </linearGradient>
+              </svg>
+              <span className="max-w-2xl text-center">
+                If you prefer
+                <span className="inline-flex align-top">
+                  <RiWhatsappFill className="size-5 mx-1 fill-[url(#whatsapp-color)]" />
+                </span>
+                WhatsApp, click here to chat with us at{" "}
+                {UserData.footerData.contact.whatsapp}
+              </span>
+              <span className="max-w-2xl text-center">
+                or email us to
+                <span className="inline-flex align-middle">
+                  <MdEmail className="size-5 mx-1 fill-card-1" />
+                </span>
+                {UserData.footerData.contact.email}
+              </span>
+            </div>
             <div className="w-auto">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63100.836613816!2d115.1594430319807!3d-8.710316683266063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd247e02265f965%3A0xad4e822dd2273c7f!2sFOCUS%20Learning%20Support%20Center!5e0!3m2!1sen!2sid!4v1727601499902!5m2!1sen!2sid"
-                width="500"
-                height="500"
+                src="https://www.google.com/maps/embed?&pb=!1m18!1m12!1m3!1d63100.836613816!2d115.1594430319807!3d-8.710316683266063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd247e02265f965%3A0xad4e822dd2273c7f!2sFOCUS%20Learning%20Support%20Center!5e0!3m2!1sen!2sid!4v1727601499902!5m2!1sen!2sid"
+                className="size-full lg:size-[500px] aspect-square"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
@@ -65,10 +93,10 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <div className="inline-flex flex-col justify-center items-center w-full mt-20 gap-1.5">
+        <div className="hidden lg:inline-flex flex-col justify-center items-center w-full mt-20 gap-1.5">
           <svg width="0" height="0">
             <linearGradient
-              id="whatsapp-color"
+              id="whatsapp-color-desktop"
               x1="100%"
               y1="100%"
               x2="0%"
@@ -78,13 +106,19 @@ export default function Contact() {
               <stop stopColor="#60D669" offset="100%" />
             </linearGradient>
           </svg>
-          <span className="flex flex-row items-center gap-2 max-w-2xl text-center">
+          <span className="max-w-2xl text-center">
             If you prefer
-            <RiWhatsappFill className="fill-[url(#whatsapp-color)]" /> WhatsApp,
-            click here to chat with us at {UserData.footerData.contact.whatsapp}
+            <span className="inline-flex align-top">
+              <RiWhatsappFill className="size-5 mx-1 fill-[url(#whatsapp-color-desktop)]" />
+            </span>
+            WhatsApp, click here to chat with us at{" "}
+            {UserData.footerData.contact.whatsapp}
           </span>
-          <span className="flex flex-row items-center gap-2 max-w-2xl text-center">
-            or email us to <MdEmail className="fill-card-1" />{" "}
+          <span className="max-w-2xl text-center">
+            or email us to
+            <span className="inline-flex align-middle">
+              <MdEmail className="size-5 mx-1 fill-card-1" />
+            </span>
             {UserData.footerData.contact.email}
           </span>
         </div>

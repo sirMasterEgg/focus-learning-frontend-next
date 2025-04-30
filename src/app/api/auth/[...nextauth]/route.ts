@@ -3,6 +3,8 @@ import NextAuth, { User } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
 import AxiosInstance from "@/utils/axiosInstance";
+import { AxiosError } from "axios";
+import { CustomUser } from "../../../../../next-auth";
 
 const getEnv = (key: string): string => {
   const value = process.env[key];
@@ -24,6 +26,8 @@ export const authOptions: NextAuthOptions = {
         {
           headers: {
             Authorization: `Bearer ${token.token}`,
+            "Content-Type": "application/json",
+            Accept: "application/json",
           },
         }
       );
@@ -36,9 +40,18 @@ export const authOptions: NextAuthOptions = {
           token.user = user.user;
           token.token = user.token;
         } else {
-          const result = await AxiosInstance.post("/auth/login/google", {
-            id_token: account?.id_token,
-          });
+          const result = await AxiosInstance.post(
+            "/auth/login/google",
+            {
+              id_token: account?.id_token,
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+            }
+          );
 
           token.user = { ...result.data.data.user };
           token.token = result.data.data.token;
@@ -47,10 +60,29 @@ export const authOptions: NextAuthOptions = {
       return token;
     },
     async session({ session, token }) {
-      session.token = token.token as string;
-      session.user = token.user as User;
+      try {
+        const currentUser = await AxiosInstance.get("/auth/user", {
+          headers: {
+            Authorization: `Bearer ${token.token}`,
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        });
+
+        // for security reason token not stored in session
+        // session.token = token.token as string;
+        session.user = currentUser.data.data as CustomUser;
+      } catch (error) {
+        console.error("Failed to fetch user:", error);
+        throw new Error("Session update failed");
+      }
 
       return session;
+    },
+    async redirect({ url, baseUrl }) {
+      if (url.startsWith("/")) return `${baseUrl}${url}`;
+      else if (new URL(url).origin === baseUrl) return url;
+      return baseUrl;
     },
   },
   providers: [
@@ -72,6 +104,7 @@ export const authOptions: NextAuthOptions = {
             {
               headers: {
                 Accept: "application/json",
+                "Content-Type": "application/json",
               },
             }
           );
@@ -84,8 +117,10 @@ export const authOptions: NextAuthOptions = {
 
           return null;
         } catch (e) {
-          console.error("Error in authorize:", e);
-          return null;
+          if (e instanceof AxiosError) {
+            throw e.response?.data;
+          }
+          throw e;
         }
       },
     }),
@@ -111,4 +146,3 @@ export const authOptions: NextAuthOptions = {
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
-// export default handler;

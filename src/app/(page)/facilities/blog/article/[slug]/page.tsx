@@ -19,7 +19,7 @@ export default async function DetailsBlog({
     return (
       <>
         <Navbar />
-        <main className="px-16">
+        <main className="px-6 lg:px-16">
           <div className="mt-10 w-full">
             <h1 className="text-text-60 text-3xl">Article Blog</h1>
           </div>
@@ -37,7 +37,7 @@ export default async function DetailsBlog({
   return (
     <>
       <Navbar />
-      <main className="px-16">
+      <main className="px-6 lg:px-16">
         <Article />
         <div className="mt-10 flex flex-col gap-10">
           {/*<span className="inline-flex w-full items-center justify-center text-gradient">
@@ -84,7 +84,7 @@ export default async function DetailsBlog({
               ))}
             </div>*/}
           <span className="separator mt-20 mb-20">Related Article</span>
-          <div className="grid grid-cols-3 gap-10 pb-40">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 pb-40">
             {articleBlogData
               .filter((article) => article.slug !== slug)
               .map((article) => (

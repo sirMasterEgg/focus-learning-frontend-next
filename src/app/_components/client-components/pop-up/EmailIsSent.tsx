@@ -1,19 +1,30 @@
-'use client';
+"use client";
 
-export default function EmailIsSent() {
-	return (
-		<div>
-			<div className='flex items-center justify-center min-h-screen'>
-				<div className='bg-white p-16 rounded-lg border-2 border-solid w-100'>
-					<h2 className='text-2xl font-bold text-center'>
-						Email Sent
-					</h2>
-					<p className='text-gray-400 text-center mt-2'>
-						We have sent you an email with instructions to reset
-						your password.
-					</p>
-				</div>
-			</div>
-		</div>
-	);
-}
+import { forwardRef } from "react";
+import { BiX } from "react-icons/bi";
+import { FaRegCheckCircle } from "react-icons/fa";
+
+const EmailIsSent = forwardRef<HTMLDialogElement, NonNullable<unknown>>(
+  (_, ref) => {
+    return (
+      <dialog ref={ref} className="dialog">
+        <div className="bg-white w-[calc(100vw_-_20rem)] rounded-xl flex flex-col gap-10 p-10 relative shadow-2xl">
+          <button className="absolute right-2 top-2 rounded-full p-1 text-gray-400 hover:bg-gray-200 transition duration-300">
+            <BiX className="size-6" />
+          </button>
+          <div className="inline-flex flex-col items-center justify-center w-full gap-3 text-secondary-100">
+            <FaRegCheckCircle className="size-16" />
+            <span className="text-3xl font-bold">E-mail is sent!</span>
+            <span className="text-center max-w-[80%] text-black mt-3">
+              The password reset link has been sent to your email address.
+              Please check your inbox for the email and follow the instructions
+              to reset your password.
+            </span>
+          </div>
+        </div>
+      </dialog>
+    );
+  }
+);
+EmailIsSent.displayName = "EmailIsSent";
+export default EmailIsSent;

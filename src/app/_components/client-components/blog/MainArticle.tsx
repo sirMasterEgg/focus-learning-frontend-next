@@ -18,8 +18,8 @@ export default function MainArticle({
 }) {
   return (
     <div className="flex flex-col">
-      <div className="flex flex-row gap-10 max-h-[300px]">
-        <div className="w-96">
+      <div className="flex flex-col lg:flex-row gap-10">
+        <div className="w-96 mx-auto">
           <Image
             width={1000}
             height={700}

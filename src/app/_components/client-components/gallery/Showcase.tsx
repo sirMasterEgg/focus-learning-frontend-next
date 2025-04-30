@@ -20,7 +20,7 @@ import {
 
 export default function Showcase() {
   const [showIndex, setShowIndex] = useState<number>(0);
-  const [isNext, setIsNext] = useState<boolean>(false);
+
   const data = [
     {
       title: "Sensory Integration Room",
@@ -54,39 +54,73 @@ export default function Showcase() {
           <stop stopColor="#2dbd6e" offset="100%" />
         </linearGradient>
       </svg>
-      <div className="w-full overflow-x-hidden relative h-[500px]">
-        {data.map((item, index) => {
-          const isCurrent = showIndex === index;
-          const isLeaving =
-            (showIndex - 1 + data.length) % data.length === index;
+      <>
+        <div className="w-full flex flex-row relative overflow-x-hidden mt-10">
+          {data.map((item, index) => {
+            const isCurrent = showIndex === index;
+            const isLeaving =
+              (showIndex - 1 + data.length) % data.length === index;
 
-          return (
-            <div
-              key={index}
-              className={`absolute h-auto w-full overflow-y-hidden transition-all duration-500 ${
-                isCurrent
-                  ? "translate-x-0 opacity-100"
-                  : isLeaving
-                  ? "translate-x-full opacity-0"
-                  : "-translate-x-full opacity-0"
-              }`}
-            >
-              <div className="mt-10 flex flex-col gap-5">
-                <h1 className="font-bold text-2xl">
-                  <span className="text-card-1">{item.title}</span>
-                </h1>
-                <div className="flex flex-row gap-10">
-                  <div className="w-96 grid grid-cols-3 gap-4">
-                    <div className="col-span-3">
-                      <Image
-                        width={500}
-                        height={300}
-                        src={item.images[0]}
-                        alt={"placeholder"}
-                        className="w-full h-full max-h-60 object-cover"
-                      />
+            return (
+              <div
+                key={index}
+                className={`flex-shrink-0 w-full h-full overflow-y-hidden transition-all duration-500 ${
+                  isCurrent
+                    ? "opacity-100"
+                    : isLeaving
+                    ? "opacity-0 translate-x-full absolute"
+                    : "opacity-0 -translate-x-full absolute"
+                }`}
+              >
+                <div className="flex flex-col gap-5">
+                  <h1 className="font-bold text-2xl">
+                    <span className="text-card-1">{item.title}</span>
+                  </h1>
+                  <div className="flex flex-col lg:flex-row gap-10">
+                    <div className="w-full lg:w-96 flex flex-wrap flex-row gap-4">
+                      <div className="w-full">
+                        <Image
+                          width={500}
+                          height={300}
+                          src={item.images[0]}
+                          alt={"placeholder"}
+                          className="w-full h-full max-h-60 object-cover"
+                        />
+                      </div>
+                      <div className="hidden lg:block flex-1">
+                        <Image
+                          width={150}
+                          height={150}
+                          src={item.images[1]}
+                          alt={"placeholder"}
+                          className="w-full h-full aspect-square object-cover"
+                        />
+                      </div>
+                      <div className="hidden lg:block flex-1">
+                        <Image
+                          width={150}
+                          height={150}
+                          src={item.images[2]}
+                          alt={"placeholder"}
+                          className="w-full h-full aspect-square object-cover"
+                        />
+                      </div>
+                      <div className="hidden lg:block flex-1">
+                        <Image
+                          width={150}
+                          height={150}
+                          src={item.images[3]}
+                          alt={"placeholder"}
+                          className="w-full h-full aspect-square object-cover"
+                        />
+                      </div>
                     </div>
-                    <div className="col-span-1">
+                    <div className="flex-1 flex flex-col gap-5">
+                      <p>{item.description}</p>
+                    </div>
+                  </div>
+                  <div className="lg:hidden flex flex-row gap-4 w-full">
+                    <div className="flex-1">
                       <Image
                         width={150}
                         height={150}
@@ -95,7 +129,7 @@ export default function Showcase() {
                         className="w-full h-full aspect-square object-cover"
                       />
                     </div>
-                    <div className="col-span-1">
+                    <div className="flex-1">
                       <Image
                         width={150}
                         height={150}
@@ -104,7 +138,7 @@ export default function Showcase() {
                         className="w-full h-full aspect-square object-cover"
                       />
                     </div>
-                    <div className="col-span-1">
+                    <div className="flex-1">
                       <Image
                         width={150}
                         height={150}
@@ -114,29 +148,27 @@ export default function Showcase() {
                       />
                     </div>
                   </div>
-                  <div className="flex-1 flex flex-col gap-5">
-                    <p>{item.description}</p>
-                  </div>
+                </div>
+                <div className="inline-flex w-full flex-row justify-end mt-5">
+                  <button
+                    tabIndex={-1}
+                    onClick={() => handleNext()}
+                    className="inline-flex flex-row gap-2 items-center italic bg-clip-text bg-gradient-to-r from-primary-100 to-secondary-100 group"
+                  >
+                    <span className="transition duration-500 text-text-60 group-hover:text-transparent">
+                      {data[(index + 1) % data.length].title}
+                    </span>
+                    <span className="relative w-4 h-4">
+                      <FaAngleRight className="opacity-100 group-hover:opacity-0 absolute w-full h-full transition duration-500 fill-text-60" />
+                      <FaAngleRight className="opacity-0 group-hover:opacity-100 absolute w-full h-full transition duration-500 fill-[url(#text-gradient)]" />
+                    </span>
+                  </button>
                 </div>
               </div>
-              <div className="inline-flex w-full flex-row justify-end">
-                <button
-                  onClick={() => handleNext()}
-                  className="inline-flex flex-row gap-2 items-center italic bg-clip-text bg-gradient-to-r from-primary-100 to-secondary-100 group"
-                >
-                  <span className="transition duration-500 text-text-60 group-hover:text-transparent">
-                    {data[(index + 1) % data.length].title}
-                  </span>
-                  <span className="relative w-4 h-4">
-                    <FaAngleRight className="opacity-100 group-hover:opacity-0 absolute w-full h-full transition duration-500 fill-text-60" />
-                    <FaAngleRight className="opacity-0 group-hover:opacity-100 absolute w-full h-full transition duration-500 fill-[url(#text-gradient)]" />
-                  </span>
-                </button>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      </>
     </>
   );
 }

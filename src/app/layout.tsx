@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import SessionWrapper from "@/app/_components/auth/SessionProvider";
+import { Toaster } from "sonner";
+import ReactQueryProvider from "@/app/_components/utils/TanstackQueryProvider";
 
 export const metadata: Metadata = {
   title: "Focus Learning Bali",
@@ -14,10 +16,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <SessionWrapper>
-      <html lang="en">
-        <body>{children}</body>
-      </html>
-    </SessionWrapper>
+    <ReactQueryProvider>
+      <SessionWrapper>
+        <html lang="en">
+          <body>
+            {children}
+            <Toaster />
+          </body>
+        </html>
+      </SessionWrapper>
+    </ReactQueryProvider>
   );
 }
