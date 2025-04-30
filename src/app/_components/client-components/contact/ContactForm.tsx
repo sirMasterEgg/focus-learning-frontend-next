@@ -28,7 +28,7 @@ export default function ContactForm() {
         <label className="flex flex-col gap-1">
           <span className="font-bold">Name</span>
           <input
-            className="border rounded p-2 ring-0 outline-1 outline-gray-400 h-10"
+            className="border rounded-sm p-2 ring-0 outline-1 outline-gray-400 h-10"
             placeholder="Enter Your Name"
             type="text"
           />
@@ -56,7 +56,7 @@ export default function ContactForm() {
         <label className="flex flex-col gap-1">
           <span className="font-bold">Email</span>
           <input
-            className="border rounded p-2 ring-0 outline-1 outline-gray-400 h-10"
+            className="border rounded-sm p-2 ring-0 outline-1 outline-gray-400 h-10"
             placeholder="Enter Your Email Address"
             type="text"
           />
@@ -64,7 +64,7 @@ export default function ContactForm() {
         <label className="flex flex-col gap-1">
           <span className="font-bold">Phone Number</span>
           <input
-            className="border rounded p-2 ring-0 outline-1 outline-gray-400 h-10"
+            className="border rounded-sm p-2 ring-0 outline-1 outline-gray-400 h-10"
             placeholder="Enter Your Phone Number"
             type="text"
             inputMode="numeric"
@@ -103,7 +103,7 @@ export default function ContactForm() {
         <label className="col-span-2 flex flex-col gap-1">
           <span className="font-bold">How We Can Help?</span>
           <textarea
-            className="border rounded p-2 ring-0 outline-1 outline-gray-400 resize-none"
+            className="border rounded-sm p-2 ring-0 outline-1 outline-gray-400 resize-none"
             rows={10}
             placeholder="Write Your Message Here"
           ></textarea>
@@ -123,7 +123,7 @@ export default function ContactForm() {
         className="dialog"
         onCancel={(e) => e.preventDefault()}
       >
-        <div className="bg-white w-[calc(100vw_-_20rem)] rounded-xl flex flex-col gap-10 p-10">
+        <div className="bg-white w-[calc(100vw-20rem)] rounded-xl flex flex-col gap-10 p-10">
           <div className="inline-flex flex-row items-center justify-center w-full gap-3 text-secondary-100">
             <FaRegCheckCircle className="text-3xl" />
             <span className="text-3xl font-bold">Message Sent!</span>

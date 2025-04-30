@@ -42,21 +42,21 @@ export default function Daycare() {
             <Image
               width={300}
               height={300}
-              className="size-0 lg:size-[calc((100%_-_2_*_2rem)_/_3)] object-cover"
+              className="size-0 lg:size-[calc((100%-2*2rem)/3)] object-cover"
               src={dayCare2}
               alt=""
             />
             <Image
               width={300}
               height={300}
-              className="size-52 lg:size-[calc((100%_-_2_*_2rem)_/_3)] object-cover"
+              className="size-52 lg:size-[calc((100%-2*2rem)/3)] object-cover"
               src={dayCare3}
               alt=""
             />
             <Image
               width={300}
               height={300}
-              className="size-0 lg:size-[calc((100%_-_2_*_2rem)_/_3)] object-cover"
+              className="size-0 lg:size-[calc((100%-2*2rem)/3)] object-cover"
               src={dayCare1}
               alt=""
             />
@@ -144,14 +144,14 @@ export default function Daycare() {
               <Image
                 width={300}
                 height={300}
-                className="size-[calc((100%_-_1_*_2rem)_/_2)] object-cover"
+                className="size-[calc((100%-1*2rem)/2)] object-cover"
                 src={dayCare2}
                 alt=""
               />
               <Image
                 width={300}
                 height={300}
-                className="size-[calc((100%_-_1_*_2rem)_/_2)] object-cover"
+                className="size-[calc((100%-1*2rem)/2)] object-cover"
                 src={dayCare1}
                 alt=""
               />

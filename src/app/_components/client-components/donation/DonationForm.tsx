@@ -380,7 +380,7 @@ export default function DonationForm({ donation }: DonationFormProps) {
   return (
     <>
       <div className="py-14 lg:p-14 w-full min-h-screen">
-        <div className="w-full flex-1 bg-white shadow-md rounded p-8">
+        <div className="w-full flex-1 bg-white shadow-md rounded-sm p-8">
           <div className="flex flex-col lg:flex-row gap-2 items-center">
             <div className="w-2/5 max-h-80">
               <Image
@@ -468,7 +468,7 @@ export default function DonationForm({ donation }: DonationFormProps) {
                 ))}
               </div>
               <label className="flex flex-col gap-1 relative">
-                <span className="absolute left-2 top-[calc(50%_-_0.75rem)]">
+                <span className="absolute left-2 top-[calc(50%-0.75rem)]">
                   Rp
                 </span>
                 <CurrencyInput
@@ -489,7 +489,7 @@ export default function DonationForm({ donation }: DonationFormProps) {
               <span className="font-bold">Payment Method</span>
               <div>
                 <label
-                  className={`flex items-center justify-between gap-3 p-4 border border-gray-300 has-[:checked]:border-black rounded-lg cursor-pointer shadow-sm peer`}
+                  className={`flex items-center justify-between gap-3 p-4 border border-gray-300 has-checked:border-black rounded-lg cursor-pointer shadow-xs peer`}
                 >
                   <div className="flex items-center gap-3">
                     <input
@@ -515,8 +515,8 @@ export default function DonationForm({ donation }: DonationFormProps) {
                   </div>
                 </label>
                 <div
-                  className={`overflow-hidden transition-all duration-300 max-h-0 opacity-0 peer-has-[:checked]:max-h-[600px] peer-has-[:checked]:opacity-100 ${
-                    cardPayment && "peer-has-[:checked]:my-3"
+                  className={`overflow-hidden transition-all duration-300 max-h-0 opacity-0 peer-has-checked:max-h-[600px] peer-has-checked:opacity-100 ${
+                    cardPayment && "peer-has-checked:my-3"
                   }`}
                 >
                   {cardPayment && (
@@ -585,7 +585,7 @@ export default function DonationForm({ donation }: DonationFormProps) {
                 </div>
               </div>
               <label
-                className={`flex items-center gap-3 p-4 border has-[:checked]:border-black border-gray-300 rounded-lg cursor-pointer shadow-sm`}
+                className={`flex items-center gap-3 p-4 border has-checked:border-black border-gray-300 rounded-lg cursor-pointer shadow-xs`}
               >
                 <input
                   type="radio"
@@ -667,7 +667,7 @@ export default function DonationForm({ donation }: DonationFormProps) {
         className="dialog"
         onCancel={(e) => e.preventDefault()}
       >
-        <div className="bg-white w-11/12 lg:w-[calc(100vw_-_20rem)] rounded-xl flex flex-col gap-10 p-10 relative shadow-2xl">
+        <div className="bg-white w-11/12 lg:w-[calc(100vw-20rem)] rounded-xl flex flex-col gap-10 p-10 relative shadow-2xl">
           <button
             onClick={() => closeModal()}
             className="absolute right-2 top-2 rounded-full p-1 text-gray-400 hover:bg-gray-200 transition duration-300"

@@ -183,7 +183,7 @@ const CustomSelect = forwardRef<HTMLSelectElement, CustomSelectProps>(
 
         <FaAngleDown
           onClick={() => toggleDropdown()}
-          className={`absolute top-3 right-2 z-[99] cursor-pointer transition duration-500 rotate-0 ${
+          className={`absolute top-3 right-2 z-99 cursor-pointer transition duration-500 rotate-0 ${
             isDropdownOpen ? "rotate-180" : ""
           }`}
         />

@@ -112,7 +112,7 @@ export default function GalleryPhotos() {
                 return (
                   <div
                     key={image.id}
-                    className="w-full lg:w-1/2 h-auto flex-shrink-0"
+                    className="w-full lg:w-1/2 h-auto shrink-0"
                   >
                     <div className="grid grid-cols-2 gap-5 h-full">
                       <Image
@@ -120,7 +120,7 @@ export default function GalleryPhotos() {
                         height={100}
                         src={image.src}
                         alt={image.alt}
-                        className={`w-full h-[calc(400px_/_2_-_1.25rem)] object-cover ${
+                        className={`w-full h-[calc(400px/2-1.25rem)] object-cover ${
                           index % 2 === 1 && index !== 0 ? "col-span-2" : ""
                         } ${image.id === 4 ? "object-[50%_80%]" : ""}`}
                       />
@@ -130,7 +130,7 @@ export default function GalleryPhotos() {
                           height={100}
                           src={galleryImage[index + 1].src}
                           alt={galleryImage[index + 1].alt}
-                          className="w-full h-[calc(400px_/_2_-_1.25rem)] object-cover"
+                          className="w-full h-[calc(400px/2-1.25rem)] object-cover"
                         />
                       )}
                       {galleryImage[index + 2] && (
@@ -141,7 +141,7 @@ export default function GalleryPhotos() {
                           alt={galleryImage[index + 2].alt}
                           className={`${
                             image.id
-                          } w-full h-[calc(400px_/_2_-_1.25rem)] object-cover ${
+                          } w-full h-[calc(400px/2-1.25rem)] object-cover ${
                             index % 2 === 0 ? "col-span-2" : ""
                           } ${image.id === 1 ? "object-[50%_80%]" : ""}`}
                         />
@@ -152,7 +152,7 @@ export default function GalleryPhotos() {
               }
               return null;
             })}
-            <div className="w-full lg:w-1/2 h-auto flex-shrink-0">
+            <div className="w-full lg:w-1/2 h-auto shrink-0">
               <div className="grid grid-cols-3 gap-5 h-full">
                 {gridImage.map((image) => (
                   <Image
@@ -161,7 +161,7 @@ export default function GalleryPhotos() {
                     height={100}
                     src={image.src}
                     alt={image.alt}
-                    className={`w-full h-[calc(400px_/_3_-_1.25rem)] object-cover`}
+                    className={`w-full h-[calc(400px/3-1.25rem)] object-cover`}
                   />
                 ))}
               </div>

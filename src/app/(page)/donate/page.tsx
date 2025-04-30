@@ -26,7 +26,7 @@ export default async function AllDonationPage() {
               Give the Gift of Hope: Donate to Our Therapy Center
             </h1>
           </div>
-          <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-10 justify-center justify-items-center min-h-[calc(100vh_-_122px_-_8rem_-_3rem_-_5rem_-_0rem)]">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-10 justify-center justify-items-center min-h-[calc(100vh-122px-8rem-3rem-5rem-0rem)]">
             <DonationList />
           </div>
           <div
@@ -42,7 +42,7 @@ export default async function AllDonationPage() {
             />
             <Link
               href="/contact"
-              className="absolute top-[calc(50%_+_20%)] left-[calc(50%_-_9rem)] gradient-background rounded-lg overflow-hidden"
+              className="absolute top-[calc(50%+20%)] left-[calc(50%-9rem)] gradient-background rounded-lg overflow-hidden"
             >
               <div className="px-4 py-2 bg-secondary-100 text-white font-semibold transition duration-500 hover:bg-secondary-100/20">
                 Contact Us

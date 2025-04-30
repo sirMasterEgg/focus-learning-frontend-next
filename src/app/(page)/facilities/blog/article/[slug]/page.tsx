@@ -29,7 +29,7 @@ export default async function DetailsBlog(
           <div className="mt-10 w-full">
             <h1 className="text-text-60 text-3xl">Article Blog</h1>
           </div>
-          <div className="mt-10 flex flex-col items-center justify-center h-[calc(100vh_-_584px)] gap-10">
+          <div className="mt-10 flex flex-col items-center justify-center h-[calc(100vh-584px)] gap-10">
             <h1 className="text-text-60 text-3xl font-bold">
               Article Not Found !
             </h1>

@@ -64,7 +64,7 @@ export default function Showcase() {
             return (
               <div
                 key={index}
-                className={`flex-shrink-0 w-full h-full overflow-y-hidden transition-all duration-500 ${
+                className={`shrink-0 w-full h-full overflow-y-hidden transition-all duration-500 ${
                   isCurrent
                     ? "opacity-100"
                     : isLeaving
@@ -153,7 +153,7 @@ export default function Showcase() {
                   <button
                     tabIndex={-1}
                     onClick={() => handleNext()}
-                    className="inline-flex flex-row gap-2 items-center italic bg-clip-text bg-gradient-to-r from-primary-100 to-secondary-100 group"
+                    className="inline-flex flex-row gap-2 items-center italic bg-clip-text bg-linear-to-r from-primary-100 to-secondary-100 group"
                   >
                     <span className="transition duration-500 text-text-60 group-hover:text-transparent">
                       {data[(index + 1) % data.length].title}

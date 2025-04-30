@@ -33,7 +33,7 @@ export default function DropdownActive({
           {menu}
           <FaAngleDown />
         </span>
-        <div className="group-hover:opacity-100 group-hover:z-10 -z-10 opacity-0 group-hover:translate-y-0 -translate-y-2.5 transition-all duration-500 absolute top-full -left-2 min-w-[calc(100%_+_1rem)] w-48 border border-secondary-100 bg-neutral-100 rounded-lg shadow-2xl">
+        <div className="group-hover:opacity-100 group-hover:z-10 -z-10 opacity-0 group-hover:translate-y-0 -translate-y-2.5 transition-all duration-500 absolute top-full -left-2 min-w-[calc(100%+1rem)] w-48 border border-secondary-100 bg-neutral-100 rounded-lg shadow-2xl">
           <ul className="flex flex-col py-2">
             {menuItems.map((item, index) => (
               <Link key={item.href + "-" + index} href={href + item.href}>

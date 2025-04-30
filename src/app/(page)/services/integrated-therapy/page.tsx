@@ -40,14 +40,14 @@ export default function IntegratedTherapy() {
               <Image
                 width={300}
                 height={300}
-                className="w-[calc(50%_-_0.625rem)] lg:w-40 object-cover"
+                className="w-[calc(50%-0.625rem)] lg:w-40 object-cover"
                 src={integratedTherapy2}
                 alt=""
               />
               <Image
                 width={300}
                 height={300}
-                className="w-[calc(50%_-_0.625rem)] lg:w-0 lg:hidden object-cover"
+                className="w-[calc(50%-0.625rem)] lg:w-0 lg:hidden object-cover"
                 src={integratedTherapy5}
                 alt=""
               />
@@ -115,21 +115,21 @@ export default function IntegratedTherapy() {
             <Image
               width={300}
               height={300}
-              className="size-[calc((100%_-_2_*_2rem)_/_3)] object-cover"
+              className="size-[calc((100%-2*2rem)/3)] object-cover"
               src={integratedTherapy5}
               alt=""
             />
             <Image
               width={300}
               height={300}
-              className="size-[calc((100%_-_2_*_2rem)_/_3)] object-cover"
+              className="size-[calc((100%-2*2rem)/3)] object-cover"
               src={integratedTherapy3}
               alt=""
             />
             <Image
               width={300}
               height={300}
-              className="size-[calc((100%_-_2_*_2rem)_/_3)] object-cover"
+              className="size-[calc((100%-2*2rem)/3)] object-cover"
               src={integratedTherapy4}
               alt=""
             />
@@ -162,7 +162,7 @@ export default function IntegratedTherapy() {
               height={300}
               width={1200}
               alt={""}
-              className="aspect-[13/5] w-full"
+              className="aspect-13/5 w-full"
             />
           </div>
         </div>

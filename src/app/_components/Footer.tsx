@@ -73,7 +73,7 @@ export default function Footer({
           </div>
           <Link
             href={UserData.footerData.link.home}
-            className="absolute -top-10 left-[calc(50%_-_128px_/_2)] bottom-auto right-auto lg:top-auto lg:left-auto lg:bottom-4 lg:right-12"
+            className="absolute -top-10 left-[calc(50%-128px/2)] bottom-auto right-auto lg:top-auto lg:left-auto lg:bottom-4 lg:right-12"
           >
             <div
               style={{
@@ -103,7 +103,7 @@ export default function Footer({
             src={floatingWhatsappLogo}
             className="w-full h-full"
           />
-          <span className="absolute whitespace-nowrap top-[calc(50%_-_1rem)] right-[90%] rounded-l-lg px-4 py-1 bg-floating-whatsapp max-w-0 opacity-0 overflow-hidden group-hover:opacity-100 group-hover:max-w-xs transition-all duration-500">
+          <span className="absolute whitespace-nowrap top-[calc(50%-1rem)] right-[90%] rounded-l-lg px-4 py-1 bg-floating-whatsapp max-w-0 opacity-0 overflow-hidden group-hover:opacity-100 group-hover:max-w-xs transition-all duration-500">
             Need Assistance? Chat us now!
           </span>
         </div>

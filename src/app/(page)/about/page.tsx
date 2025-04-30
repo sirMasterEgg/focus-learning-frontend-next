@@ -283,7 +283,7 @@ export default function About() {
             {teachers.map((teacher, index) => (
               <div
                 key={index}
-                className={`w-24 lg:w-40 flex-shrink-0 flex flex-col items-center justify-start gap-2`}
+                className={`w-24 lg:w-40 shrink-0 flex flex-col items-center justify-start gap-2`}
               >
                 <Image
                   width={68}
