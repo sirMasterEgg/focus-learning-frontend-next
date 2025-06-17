@@ -8,25 +8,23 @@ import {
 } from "@/app/types/type";
 import AxiosInstance from "@/utils/axiosInstance";
 import { revalidatePath } from "next/cache";
-import { AxiosError } from "axios";
+import { AxiosError, isAxiosError } from "axios";
 import { getToken } from "next-auth/jwt";
-import {
-  cookies,
-  headers,
-  type UnsafeUnwrappedCookies,
-  type UnsafeUnwrappedHeaders,
-} from "next/headers";
+import { cookies, headers } from "next/headers";
 import { NextRequest } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
-const getSession = () => {
+const getSession = async () => {
+  const header = await headers();
+  const cookie = await cookies();
+
   return Promise.all([
     getServerSession(authOptions),
     getToken({
       req: {
-        headers: headers() as unknown as UnsafeUnwrappedHeaders,
-        cookies: cookies() as unknown as UnsafeUnwrappedCookies,
+        headers: header,
+        cookies: cookie,
       } as unknown as NextRequest,
     }),
   ]);
@@ -226,7 +224,7 @@ export async function RegisterUser(data: RegisterUserType) {
       data: response.data,
     };
   } catch (e) {
-    if (e instanceof AxiosError) {
+    if (isAxiosError(e)) {
       return {
         status: e.response?.status,
         data: e.response?.data,

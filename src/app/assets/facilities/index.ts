@@ -32,6 +32,8 @@ import gallery11 from "./Gallery11.jpg";
 import gallery12 from "./Gallery12.jpg";
 import gallery13 from "./Gallery13.jpg";
 import gallery14 from "./Gallery14.jpg";
+import gallery15 from "./gallery15.jpg";
+import gallery16 from "./gallery16.jpg";
 import siRoom from "./SI ROOM.png";
 import siRoom1 from "./SI ROOM1.jpg";
 import siRoom2 from "./SI ROOM2.jpg";
@@ -72,6 +74,8 @@ export {
   gallery12,
   gallery13,
   gallery14,
+  gallery15,
+  gallery16,
   siRoom,
   siRoom1,
   siRoom2,

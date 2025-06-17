@@ -9,6 +9,10 @@ import integratedTherapy3 from "./Integrated Therapy3.png";
 import integratedTherapy4 from "./Integrated Therapy4.png";
 import integratedTherapy5 from "./Integrated Therapy5.png";
 import integratedTherapyBottomBanner from "./Intergrated Therapy - Bottom Banner .png";
+import psychologicalServiceTopBanner from "./psychological service - Top Banner.png";
+import psychologicalService1 from "./psychological service1.png";
+import psychologicalService2 from "./psychological service2.png";
+import psychologicalService3 from "./psychological service3.jpg";
 
 export {
   dayCareTopBanner,
@@ -22,4 +26,8 @@ export {
   integratedTherapy4,
   integratedTherapy5,
   integratedTherapyBottomBanner,
+  psychologicalServiceTopBanner,
+  psychologicalService1,
+  psychologicalService2,
+  psychologicalService3,
 };

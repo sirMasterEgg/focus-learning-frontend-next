@@ -8,6 +8,8 @@ import {
   gallery12,
   gallery13,
   gallery14,
+  gallery15,
+  gallery16,
   gallery2,
   gallery3,
   gallery4,
@@ -79,7 +81,7 @@ export default function GalleryPhotos() {
     },
     {
       id: 6,
-      src: "https://placehold.co/100",
+      src: gallery15,
       alt: "Image 6",
     },
     {
@@ -89,7 +91,7 @@ export default function GalleryPhotos() {
     },
     {
       id: 8,
-      src: "https://placehold.co/100",
+      src: gallery16,
       alt: "Image 8",
     },
     {
@@ -102,7 +104,7 @@ export default function GalleryPhotos() {
   return (
     <>
       <div className="my-20 flex flex-col gap-10">
-        <span className="text-2xl text-secondary-100 font-bold px-16">
+        <span className="text-2xl text-secondary-100 font-bold px-6 lg:px-16">
           Our Activities
         </span>
         <div className="bg-team-bg">

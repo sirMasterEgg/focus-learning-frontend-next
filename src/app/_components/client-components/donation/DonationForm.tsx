@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { FaRegCheckCircle, FaRegCreditCard } from "react-icons/fa";
-import { useEffect, useRef, useState, type JSX } from "react";
+import { type JSX, useEffect, useRef, useState } from "react";
 import WhiteLogo from "@/app/assets/navbar/Main Logo with Name Vector.svg";
 import { mastercardLogo, popUp, qris, visaLogo } from "@/app/assets/others";
 import CurrencyInput from "@/app/_components/client-components/donation/CurrencyInput";
@@ -21,6 +21,7 @@ import CountdownTimer from "@/app/_components/client-components/donate/Countdown
 import { useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import Script from "next/script";
 
 const buttonDonation = [
   {
@@ -379,6 +380,15 @@ export default function DonationForm({ donation }: DonationFormProps) {
 
   return (
     <>
+      <Script
+        id="midtrans-script"
+        src="https://api.midtrans.com/v2/assets/js/midtrans-new-3ds.min.js"
+        data-environment="sandbox"
+        data-client-key={process.env.NEXT_PUBLIC_MIDTRANS_CLIENT_KEY}
+        async
+        type="text/javascript"
+        strategy="afterInteractive"
+      />
       <div className="py-14 lg:p-14 w-full min-h-screen">
         <div className="w-full flex-1 bg-white shadow-md rounded-sm p-8">
           <div className="flex flex-col lg:flex-row gap-2 items-center">

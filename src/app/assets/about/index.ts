@@ -23,6 +23,9 @@ import MissSepti from "./members/Miss Septi.jpg";
 import MissWinda from "./members/Miss Winda.jpg";
 import MrsSiska from "./members/Mrs. Siska.jpg";
 import SirAdit from "./members/Sir Adit.jpg";
+import SirNuel from "./members/Sir Nuel.jpg";
+import MissMirah from "./members/Miss Mirah.jpg";
+import MissAlda from "./members/Miss Alda.jpeg";
 
 export {
   missionBackground,
@@ -50,4 +53,7 @@ export {
   MissWinda,
   MrsSiska,
   SirAdit,
+  SirNuel,
+  MissMirah,
+  MissAlda,
 };

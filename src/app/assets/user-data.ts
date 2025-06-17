@@ -23,13 +23,14 @@ export const UserData = {
   footerData: {
     link: {
       facebook: "#",
-      instagram: "#",
+      instagram: "https://www.instagram.com/focuslearningid",
       linkedin: "#",
       home: "/",
+      whatsapp: "https://wa.me/6281338871212",
     },
     contact: {
       email: "lovechildernworld@gmail.com",
-      whatsapp: "+62 XXXX XXX",
+      whatsapp: "+62 813 3887 1212",
     },
     openingHours: {
       day: "Monday - Friday",

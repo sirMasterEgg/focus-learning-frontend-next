@@ -95,7 +95,7 @@ export default function Footer({
       </footer>
       <Link
         className="hidden lg:block"
-        href={UserData.footerData.contact.whatsapp}
+        href={UserData.footerData.link.whatsapp}
       >
         <div className="fixed z-10 bottom-10 right-10 rounded-full p-4 bg-floating-whatsapp w-16 h-16 group">
           <Image
