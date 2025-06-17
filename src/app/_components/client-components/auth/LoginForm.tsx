@@ -18,7 +18,11 @@ export default function LoginForm({ callbackUrl }: LoginFormProps) {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const router = useRouter();
-
+  // const {handleSubmit} = useForm();
+  // const loginMutation = useMutation({
+  //   mutationFn:
+  // })
+  // todo
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSubmitting(true);
@@ -98,7 +102,7 @@ export default function LoginForm({ callbackUrl }: LoginFormProps) {
           {/*<label className="inline-flex items-center relative">
             <input
               type="checkbox"
-              className="w-4 h-4 appearance-none border-2 border-black rounded checked:bg-blue-500 checked:border-transparent focus:outline-offset-4"
+              className="w-4 h-4 appearance-none border-2 border-black rounded-sm checked:bg-blue-500 checked:border-transparent focus:outline-offset-4"
             />
             <span className="absolute left-2 text-white top-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <FaCheck className="w-3 h-3" />

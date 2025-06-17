@@ -8,9 +8,10 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerUserSchema, RegisterUserType } from "@/app/types/type";
-import { RegisterUser } from "@/app/actions/action";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { useMutation } from "@tanstack/react-query";
+import { RegisterUser } from "@/app/actions/action";
 
 export default function RegisterForm() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -18,22 +19,28 @@ export default function RegisterForm() {
     useState<boolean>(false);
   const router = useRouter();
 
+  const registerMutation = useMutation({
+    mutationFn: RegisterUser,
+  });
+
   const { register, handleSubmit } = useForm({
     resolver: zodResolver(registerUserSchema),
   });
 
-  const onSubmit = async (data: RegisterUserType) => {
-    const response = await RegisterUser(data);
-    console.log(response);
-    if (response.status && response.status >= 400) {
-      return toast.error(response.data.message);
-    }
-    if (response.status === 201) {
-      toast.success(
-        "Account created successfully, please check your email to verify your account"
-      );
-      router.push("/login");
-    }
+  const onSubmit = (data: RegisterUserType) => {
+    registerMutation.mutate(data, {
+      onSuccess: (success) => {
+        if (success.status && success.status >= 400) {
+          toast.error(success.data.message);
+          return;
+        }
+
+        toast.success(
+          "Account created successfully, please check your email to verify your account"
+        );
+        router.push("/auth/login");
+      },
+    });
   };
 
   return (
@@ -74,6 +81,7 @@ export default function RegisterForm() {
             type="button"
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-3 translate-y-0.5 top-1/2 text-gray-400"
+            tabIndex={-1}
           >
             {showPassword ? (
               <>
@@ -98,6 +106,7 @@ export default function RegisterForm() {
             type="button"
             onClick={() => setShowConfirmPassword(!showConfirmPassword)}
             className="absolute right-3 translate-y-0.5 top-1/2 text-gray-400"
+            tabIndex={-1}
           >
             {showConfirmPassword ? (
               <>
@@ -112,9 +121,12 @@ export default function RegisterForm() {
         </label>
         <button
           type="submit"
-          className="w-full bg-secondary-100 rounded-lg h-12 font-bold text-white"
+          disabled={registerMutation.isPending}
+          className={`w-full bg-secondary-100 rounded-lg h-12 font-bold text-white ${
+            registerMutation.isPending ? "bg-secondary-100/60" : ""
+          }`}
         >
-          Sign Up
+          {registerMutation.isPending ? "Signing Up..." : "Sign Up"}
         </button>
       </form>
       <span className="separator my-5">or</span>

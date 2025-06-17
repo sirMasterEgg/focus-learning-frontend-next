@@ -1,7 +1,7 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
+import { authOptions } from "@/lib/auth";
 
 export const metadata: Metadata = {
   description: "",

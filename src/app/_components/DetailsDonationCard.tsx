@@ -28,7 +28,7 @@ export default function DetailsDonationCard({
 
   return (
     <>
-      <div className="rounded-lg shadow p-5 space-y-4">
+      <div className="rounded-lg shadow-sm p-5 space-y-4">
         <div className="flex flex-col">
           <span className="text-2xl font-bold text-primary-100">
             {detailsDonation.data.current_donation.toLocaleString("id-ID", {

@@ -7,14 +7,15 @@ import {
   bigTeams,
   coreValues,
   founder,
+  MissAlda,
   MissDebby,
   MissDevi,
   MissEcha,
   MissEllin,
   MissFebby,
-  MissHesti,
   missionBackground,
   MissKayla,
+  MissMirah,
   MissNurma,
   MissOktha,
   MissSelvi,
@@ -22,6 +23,7 @@ import {
   MissWinda,
   MrsSiska,
   SirAdit,
+  SirNuel,
   visionBackground,
 } from "@/app/assets/about";
 import RoundedIcon from "@/app/_components/RoundedIcon";
@@ -138,11 +140,11 @@ const teachers = [
   },
   {
     image: {
-      url: MissHesti,
-      alt: "Miss Hesti",
+      url: MissAlda,
+      alt: "Miss Alda",
       position: "object-center",
     },
-    name: "Miss Hesti",
+    name: "Miss Alda",
     position: "Daycare Teacher",
   },
   {
@@ -153,6 +155,26 @@ const teachers = [
     },
     name: "Miss Echa",
     position: "Daycare Teacher",
+  },
+];
+const teacherBig = [
+  {
+    image: {
+      url: SirNuel,
+      alt: "Sir Nuel",
+      position: "object-center",
+    },
+    name: "Sir Nuel",
+    position: "Owner of Focus Learning",
+  },
+  {
+    image: {
+      url: MissMirah,
+      alt: "Miss Mirah",
+      position: "object-center",
+    },
+    name: "Miss Mirah",
+    position: "Child Psychiatrist",
   },
 ];
 
@@ -283,7 +305,7 @@ export default function About() {
             {teachers.map((teacher, index) => (
               <div
                 key={index}
-                className={`w-24 lg:w-40 flex-shrink-0 flex flex-col items-center justify-start gap-2`}
+                className={`w-24 lg:w-40 shrink-0 flex flex-col items-center justify-start gap-2`}
               >
                 <Image
                   width={68}
@@ -300,22 +322,22 @@ export default function About() {
                 </span>
               </div>
             ))}
-            <div className="w-full flex flex-row gap-10 items-center justify-center">
+            <div className="w-full flex flex-col sm:flex-row gap-10 items-center justify-center">
               <div className={`flex flex-col items-center justify-start gap-2`}>
                 <div className="size-36 lg:size-48 rounded-full overflow-hidden">
                   <Image
                     width={68}
                     height={68}
-                    className={`w-full h-full object-cover ${teachers[0].image.position}`}
-                    src={teachers[0].image.url}
-                    alt={teachers[0].image.alt}
+                    className={`w-full h-full object-cover ${teacherBig[0].image.position}`}
+                    src={teacherBig[0].image.url}
+                    alt={teacherBig[0].image.alt}
                   />
                 </div>
                 <span className="font-bold text-lg text-center">
-                  {teachers[0].name}
+                  {teacherBig[0].name}
                 </span>
                 <span className="text-secondary-100 text-center">
-                  {teachers[0].position}
+                  {teacherBig[0].position}
                 </span>
               </div>
               <div className={`flex flex-col items-center justify-start gap-2`}>
@@ -323,16 +345,16 @@ export default function About() {
                   <Image
                     width={68}
                     height={68}
-                    className={`w-full h-full object-cover ${teachers[0].image.position}`}
-                    src={teachers[0].image.url}
-                    alt={teachers[0].image.alt}
+                    className={`w-full h-full object-cover ${teacherBig[1].image.position}`}
+                    src={teacherBig[1].image.url}
+                    alt={teacherBig[1].image.alt}
                   />
                 </div>
                 <span className="font-bold text-lg text-center">
-                  {teachers[0].name}
+                  {teacherBig[1].name}
                 </span>
                 <span className="text-secondary-100 text-center">
-                  {teachers[0].position}
+                  {teacherBig[1].position}
                 </span>
               </div>
             </div>

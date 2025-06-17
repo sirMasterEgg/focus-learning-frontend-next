@@ -13,17 +13,17 @@ import article4_2 from "./BLOG/Article 4 (2).png";
 import oneOnOneRoom from "./1ON1 ROOM.png";
 import oneOnOneRoom1 from "./1ON1 ROOM 1.png";
 import oneOnOneRoom2 from "./1ON1 ROOM 2.png";
-import oneOnOneRoom3 from "./1ON1 ROOM 3.JPG";
+import oneOnOneRoom3 from "./1ON1 ROOM 3.jpg";
 import daycare from "./DAYCARE.png";
 import daycare1 from "./DAYCARE1JPG.jpg";
-import daycare2 from "./DAYCARE2.JPG";
+import daycare2 from "./DAYCARE2.jpg";
 import daycare3 from "./DAYCARE3.jpg";
 import gallery1 from "./Gallery1.jpg";
 import gallery2 from "./Gallery2jpg.jpg";
 import gallery3 from "./Gallery3.jpg";
 import gallery4 from "./Gallery4.jpg";
 import gallery5 from "./Gallery5.jpg";
-import gallery6 from "./Gallery6.JPG";
+import gallery6 from "./Gallery6.jpg";
 import gallery7 from "./Gallery7.jpg";
 import gallery8 from "./Gallery8.jpg";
 import gallery9 from "./Gallery9.jpg";
@@ -31,11 +31,13 @@ import gallery10 from "./Gallery10.jpg";
 import gallery11 from "./Gallery11.jpg";
 import gallery12 from "./Gallery12.jpg";
 import gallery13 from "./Gallery13.jpg";
-import gallery14 from "./Gallery14.JPG";
+import gallery14 from "./Gallery14.jpg";
+import gallery15 from "./gallery15.jpg";
+import gallery16 from "./gallery16.jpg";
 import siRoom from "./SI ROOM.png";
 import siRoom1 from "./SI ROOM1.jpg";
 import siRoom2 from "./SI ROOM2.jpg";
-import siRoom3 from "./SI ROOM3.JPG";
+import siRoom3 from "./SI ROOM3.jpg";
 
 export {
   article1,
@@ -72,6 +74,8 @@ export {
   gallery12,
   gallery13,
   gallery14,
+  gallery15,
+  gallery16,
   siRoom,
   siRoom1,
   siRoom2,

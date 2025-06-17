@@ -5,16 +5,14 @@ import { AxiosError } from "axios";
 import { getToken } from "next-auth/jwt";
 import { cookies, headers } from "next/headers";
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function GET(request: NextRequest, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const { id } = params;
 
   const token = await getToken({
     req: {
-      headers: headers(),
-      cookies: cookies(),
+      headers: await headers(),
+      cookies: await cookies(),
     } as unknown as NextRequest,
   });
 

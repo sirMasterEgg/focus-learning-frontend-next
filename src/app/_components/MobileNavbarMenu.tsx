@@ -44,7 +44,7 @@ export default function MobileNavbarMenu() {
             (open ? "translate-x-0" : "translate-x-full")
           }
         >
-          <div className="px-4 pt-16 pb-24 h-[calc(100%_-_8rem)]">
+          <div className="px-4 pt-16 pb-24 h-[calc(100%-8rem)]">
             <div className="flex flex-col h-full items-end justify-center gap-3 text-right">
               <button className="mb-8" onClick={() => setOpen(false)}>
                 <IoCloseOutline className="size-8" />

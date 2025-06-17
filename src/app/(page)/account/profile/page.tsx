@@ -17,7 +17,7 @@ async function AccountPage() {
       <Navbar />
       <main className="px-6 lg:px-16">
         <div className="mt-10 w-full mb-10">
-          <div className="min-h-[calc(100vh_-_122px_-_8rem_-_3rem_-_5rem_-_13.6rem)] flex flex-col lg:flex-row items-center lg:items-start gap-8 justify-between">
+          <div className="min-h-[calc(100vh-122px-8rem-3rem-5rem-13.6rem)] flex flex-col lg:flex-row items-center lg:items-start gap-8 justify-between">
             <div className="h-fit">
               <ProfileCard />
             </div>

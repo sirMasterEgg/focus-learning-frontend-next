@@ -8,7 +8,7 @@ const EmailIsSent = forwardRef<HTMLDialogElement, NonNullable<unknown>>(
   (_, ref) => {
     return (
       <dialog ref={ref} className="dialog">
-        <div className="bg-white w-[calc(100vw_-_20rem)] rounded-xl flex flex-col gap-10 p-10 relative shadow-2xl">
+        <div className="bg-white w-[calc(100vw-20rem)] rounded-xl flex flex-col gap-10 p-10 relative shadow-2xl">
           <button className="absolute right-2 top-2 rounded-full p-1 text-gray-400 hover:bg-gray-200 transition duration-300">
             <BiX className="size-6" />
           </button>

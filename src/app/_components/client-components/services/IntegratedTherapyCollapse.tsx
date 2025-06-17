@@ -18,14 +18,14 @@ export default function IntegratedTherapyCollapse() {
         <Image
           width={300}
           height={300}
-          className="w-[calc(50%_-_0.625rem)] lg:w-40 object-cover"
+          className="w-[calc(50%-0.625rem)] lg:w-40 object-cover"
           src={integratedTherapy1}
           alt=""
         />
         <Image
           width={300}
           height={300}
-          className="w-[calc(50%_-_0.625rem)] lg:w-0 lg:hidden object-cover"
+          className="w-[calc(50%-0.625rem)] lg:w-0 lg:hidden object-cover"
           src={integratedTherapy3}
           alt=""
         />
@@ -151,7 +151,7 @@ export default function IntegratedTherapyCollapse() {
           </svg>
           <button
             onClick={() => handleCollapse()}
-            className="inline-flex flex-row gap-2 items-center italic bg-clip-text bg-gradient-to-r from-primary-100 to-secondary-100 group"
+            className="inline-flex flex-row gap-2 items-center italic bg-clip-text bg-linear-to-r from-primary-100 to-secondary-100 group"
           >
             <span className="transition duration-500 text-text-60 group-hover:text-transparent">
               {isOpen

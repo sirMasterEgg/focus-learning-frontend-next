@@ -3,6 +3,12 @@ import Footer from "@/app/_components/Footer";
 import Image from "next/image";
 import LinkWithGradientBackground from "@/app/_components/LinkWithGradientBackground";
 import Link from "next/link";
+import {
+  psychologicalService1,
+  psychologicalService2,
+  psychologicalService3,
+  psychologicalServiceTopBanner,
+} from "@/app/assets/services";
 
 export default function PsychologicalServices() {
   return (
@@ -13,7 +19,7 @@ export default function PsychologicalServices() {
           <Image
             width={1280}
             height={300}
-            src={"https://placehold.co/1280x300"}
+            src={psychologicalServiceTopBanner}
             className="w-full h-36 lg:h-auto object-cover"
             priority={true}
             alt="Banner Image"
@@ -35,22 +41,22 @@ export default function PsychologicalServices() {
             <Image
               width={300}
               height={300}
-              src={"https://placehold.co/300"}
-              className="size-0 lg:size-[calc((100%_-_2_*_2rem)_/_3)] object-cover"
+              src={psychologicalService1}
+              className="size-0 lg:size-[calc((100%-2*2rem)/3)] object-cover aspect-square"
               alt=""
             />
             <Image
               width={300}
               height={300}
-              src={"https://placehold.co/300"}
-              className="size-52 lg:size-[calc((100%_-_2_*_2rem)_/_3)] object-cover"
+              src={psychologicalService2}
+              className="size-52 lg:size-[calc((100%-2*2rem)/3)] object-cover aspect-square"
               alt=""
             />
             <Image
               width={300}
               height={300}
-              className="size-0 lg:size-[calc((100%_-_2_*_2rem)_/_3)] object-cover"
-              src={"https://placehold.co/300"}
+              className="size-0 lg:size-[calc((100%-2*2rem)/3)] object-cover aspect-square"
+              src={psychologicalService3}
               alt=""
             />
           </div>
@@ -115,15 +121,15 @@ export default function PsychologicalServices() {
               <Image
                 width={300}
                 height={300}
-                className="size-[calc((100%_-_1_*_2rem)_/_2)] object-cover"
-                src={"https://placehold.co/300"}
+                className="size-[calc((100%-1*2rem)/2)] object-cover aspect-square"
+                src={psychologicalService1}
                 alt=""
               />
               <Image
                 width={300}
                 height={300}
-                className="size-[calc((100%_-_1_*_2rem)_/_2)] object-cover"
-                src={"https://placehold.co/300"}
+                className="size-[calc((100%-1*2rem)/2)] object-cover aspect-square"
+                src={psychologicalService3}
                 alt=""
               />
             </div>

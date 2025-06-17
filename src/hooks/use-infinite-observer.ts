@@ -17,7 +17,7 @@ export function useInfiniteObserver<TData, TError, TElement extends Element>({
     options?: FetchNextPageOptions
   ) => Promise<InfiniteQueryObserverResult<TData, TError>>;
 }) {
-  const handleObserver = useRef<IntersectionObserver>();
+  const handleObserver = useRef<IntersectionObserver>(undefined);
 
   return useCallback(
     (element: TElement | null) => {

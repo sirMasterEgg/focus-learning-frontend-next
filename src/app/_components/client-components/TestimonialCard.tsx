@@ -48,11 +48,11 @@ export default function TestimonialCard() {
             <div
               className={`rounded-xl w-[20rem] max-h-[18rem] lg:max-h-full lg:w-[35rem] ${testimonial.cardColor} relative py-10 px-8`}
             >
-              <div className="p-[2px] rounded-[calc(0.75rem_+_2px)] bg-neutral-100 absolute top-0 left-[calc(50%_-_5rem)] -translate-y-[70%] lg:left-[calc(50%_-_100px)] drop-shadow-2xl shadow-2xl">
+              <div className="w-[10rem] lg:w-[12.5rem] h-32 p-[2px] rounded-[calc(0.75rem+2px)] bg-neutral-100 absolute top-0 left-[calc(50%-5rem)] -translate-y-[70%] lg:left-[calc(50%-100px)] drop-shadow-2xl shadow-2xl">
                 <Image
                   width={200}
                   height={200}
-                  className="rounded-xl object-cover w-[10rem] lg:w-[12.5rem] h-32"
+                  className="rounded-xl object-cover w-full h-full"
                   src={testimonial.image.url}
                   alt={testimonial.image.alt}
                 />
@@ -74,7 +74,7 @@ export default function TestimonialCard() {
             </div>
           </div>
         ))}
-        <div className="absolute w-32 -bottom-8 left-[calc(50%_-_4rem)] inline-flex justify-center items-center gap-3 -translate-y-10">
+        <div className="absolute w-32 -bottom-8 left-[calc(50%-4rem)] inline-flex justify-center items-center gap-3 -translate-y-10">
           <button
             onClick={() => handleNext()}
             className="rounded-full border border-card-1 p-2 hover:bg-card-1 group transition duration-500"

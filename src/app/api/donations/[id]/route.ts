@@ -3,10 +3,8 @@ import { GetDetailsDonationResponse } from "@/app/types/type";
 import { AxiosError } from "axios";
 import { NextRequest } from "next/server";
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function GET(request: NextRequest, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const { id } = params;
   try {
     const response = await AxiosInstance.get<GetDetailsDonationResponse>(

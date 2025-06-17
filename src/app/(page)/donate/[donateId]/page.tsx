@@ -12,13 +12,19 @@ import { redirect } from "next/navigation";
 const window = new JSDOM("").window;
 const purify = DOMPurify(window);
 
-export default async function DetailsDonation({
-  params: { donateId },
-}: {
-  params: {
-    donateId: string;
-  };
-}) {
+export default async function DetailsDonation(
+  props: {
+    params: Promise<{
+      donateId: string;
+    }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    donateId
+  } = params;
+
   const { data: detailsDonation } = await axios.get<GetDetailsDonationResponse>(
     process.env.NEXT_URL + "/api/donations/" + donateId
   );
@@ -49,7 +55,7 @@ export default async function DetailsDonation({
               {detailsDonation.data.title}
             </h1>
           </div>
-          <div className="w-full min-h-[calc(100vh_-_122px_-_8rem_-_3rem_-_5rem_-_0rem)] flex flex-col lg:flex-row gap-5">
+          <div className="w-full min-h-[calc(100vh-122px-8rem-3rem-5rem-0rem)] flex flex-col lg:flex-row gap-5">
             <div className="flex-1">
               <div className="w-full max-h-80">
                 <Image
