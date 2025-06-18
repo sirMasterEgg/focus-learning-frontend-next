@@ -3,6 +3,8 @@ import "./globals.css";
 import SessionWrapper from "@/app/_components/auth/SessionProvider";
 import { Toaster } from "sonner";
 import ReactQueryProvider from "@/app/_components/utils/TanstackQueryProvider";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Focus Learning Bali",
@@ -22,6 +24,8 @@ export default function RootLayout({
           <body>
             {children}
             <Toaster />
+            <Analytics />
+            <SpeedInsights />
           </body>
         </html>
       </SessionWrapper>
