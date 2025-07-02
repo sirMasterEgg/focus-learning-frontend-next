@@ -58,21 +58,27 @@ export default function DonationList() {
 
   return (
     <>
-      {isLoading
-        ? Array.from({ length: 12 }).map((_, i) => {
-            return <DonationCard isLoading={true} key={i} />;
-          })
-        : data.map((donation, i) => (
-            <DonationCard
-              ref={data.length === i + 1 ? lastElement : null}
-              title={donation.title}
-              target={donation.target}
-              current_donation={donation.current_donation}
-              thumbnail={donation.thumbnail}
-              key={donation.id}
-              id={donation.human_readable_id}
-            />
-          ))}
+      {isLoading ? (
+        Array.from({ length: 12 }).map((_, i) => {
+          return <DonationCard isLoading={true} key={i} />;
+        })
+      ) : data?.length !== 0 ? (
+        data.map((donation, i) => (
+          <DonationCard
+            ref={data.length === i + 1 ? lastElement : null}
+            title={donation.title}
+            target={donation.target}
+            current_donation={donation.current_donation}
+            thumbnail={donation.thumbnail}
+            key={donation.id}
+            id={donation.human_readable_id}
+          />
+        ))
+      ) : (
+        <div className="w-full h-40 flex items-center justify-center lg:col-span-3">
+          <span className="text-gray-500">No donations available</span>
+        </div>
+      )}
       {isFetching &&
         Array.from({ length: 6 }).map((_, i) => (
           <DonationCard isLoading={true} key={i} />

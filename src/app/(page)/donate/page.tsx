@@ -31,18 +31,18 @@ export default async function AllDonationPage() {
           </div>
           <div
             className="w-full h-48 bg-cover relative mt-10"
-            style={{
-              backgroundImage: `url('${donationBannerBottom.src}')`,
-            }}
+            // style={{
+            //   backgroundImage: `url('${donationBannerBottom.src}')`,
+            // }}
           >
             <Image
               src={donationBannerBottom}
-              className="w-full h-full object-fill"
+              className="w-full h-full object-contain"
               alt={""}
             />
             <Link
               href="/contact"
-              className="absolute top-[calc(50%+20%)] left-[calc(50%-9rem)] gradient-background rounded-lg overflow-hidden"
+              className="absolute top-[50%] left-1/4 lg:top-[calc(50%+20%)] lg:left-[calc(50%-9rem)] gradient-background rounded-lg overflow-hidden"
             >
               <div className="px-4 py-2 bg-secondary-100 text-white font-semibold transition duration-500 hover:bg-secondary-100/20">
                 Contact Us

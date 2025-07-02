@@ -40,12 +40,12 @@ export default function IntegratedTherapyCollapse() {
             Integrated therapy
           </span>{" "}
           is a comprehensive approach that combines various therapeutic
-          techniques to address the unique needs of children.
+          techniques to meet the unique needs of each child.
         </p>
         <p>
-          This holistic approach aims to promote overall well-being and
-          development by considering the {"child's"} physical, emotional,
-          cognitive, and social factors.
+          This holistic method promotes overall well-being and development by
+          addressing physical, emotional, cognitive, and social aspects of the
+          child.
         </p>
         <div>
           <span
@@ -79,18 +79,19 @@ export default function IntegratedTherapyCollapse() {
           <div>
             <span className="font-bold">Sensory Integration:</span> Engaging
             activities that stimulate the senses and help children develop
-            better sensory processing. Examples include:
+            stronger sensory processing. Examples include:
             <ul className="list-outside list-disc px-8">
               <li>
                 Monkey bars: Promote balance, coordination, and upper body
                 strength.
               </li>
               <li>
-                Balance board: Enhance balance, coordination, and
-                proprioception.
+                Balance board: Enhance balance, coordination, and body awareness
+                (proprioception).
               </li>
               <li>
-                Sensory bins: Explore different textures, materials, and scents.
+                Sensory bins: Encourage exploration of different textures,
+                materials, and scents.
               </li>
             </ul>
           </div>
@@ -98,20 +99,19 @@ export default function IntegratedTherapyCollapse() {
             <span className="font-bold">
               Language and Communication Skills:
             </span>{" "}
-            Tailored activities to improve speech, language, and social skills.
-            This includes:
+            Tailored activities to support the development of speech, language,
+            and social interaction. This includes:
             <ul className="list-disc list-outside px-8">
               <li>
                 Storytelling: Encouraging children to create and share their own
                 stories.
               </li>
               <li>
-                Role-playing: Practicing social interactions and communication
-                skills, including sharing, taking turns, and playing
-                cooperatively.
+                Role-playing: Practicing social interactions and communication,
+                including sharing, turn-taking, and cooperative play.
               </li>
               <li>
-                Speech exercises: Improving articulation, pronunciation, and
+                Speech exercises: Strengthening articulation, pronunciation, and
                 fluency.
               </li>
             </ul>

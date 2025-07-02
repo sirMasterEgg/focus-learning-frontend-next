@@ -29,7 +29,7 @@ export const UserData = {
       whatsapp: "https://wa.me/6281338871212",
     },
     contact: {
-      email: "lovechildernworld@gmail.com",
+      email: "support@focuslearningsc.com",
       whatsapp: "+62 813 3887 1212",
     },
     openingHours: {
@@ -111,7 +111,7 @@ export const TestimonialData = [
     },
     cardColor: "bg-card-5",
     testimonial:
-      "\"My child has begun to speak a few words, but it's been a gradual process, and she isn't as as energetic as she used to be.\"",
+      "“My child has begun to speak a few words, but it's been a gradual process, and she isn't as energetic as she used to be.”",
   },
   {
     name: "Clio Miroku Lee",
@@ -136,15 +136,15 @@ export const TestimonialData = [
       '"Dipta is starting to understand but is still in the process of learning to speak and communicate verbally."',
   },
   {
-    name: "Aaron William May",
-    role: "Father of Jobbie William Junior",
+    name: "Ni Nengah Namayanti",
+    role: "Mother of Yudis",
     image: {
       url: testimony4,
-      alt: "Testimony of Aaron William May",
+      alt: "Testimony of Ni Nengah Namayanti",
     },
     cardColor: "bg-card-1",
     testimonial:
-      '"We’re thankful for Focus Learning’s support. Jobbie has made great progress thanks to your dedicated therapy."',
+      "“We’re thankful for Focus Learning. Since Yudis joined at 4.5 years old, we’ve seen big improvements in his independence and character. We also discovered his love for art!”",
   },
 ];
 export const aboutPageCoreValues = [
@@ -180,7 +180,7 @@ export const aboutPageCoreValues = [
     altIcon: "Collaboration",
     title: "Collaboration:",
     description:
-      "We treat every child with respect, empathy, and understanding.",
+      "We work closely with families, educators, and psychologists to ensure optimal outcomes.",
   },
 ];
 export const articleBlogData = [

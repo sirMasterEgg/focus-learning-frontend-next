@@ -104,6 +104,15 @@ const teachers = [
   },
   {
     image: {
+      url: MissAlda,
+      alt: "Miss Alda",
+      position: "object-center",
+    },
+    name: "Miss Alda",
+    position: "Physio Therapist",
+  },
+  {
+    image: {
       url: MissDevi,
       alt: "Miss Devi",
       position: "object-[50%_40%]",
@@ -138,15 +147,7 @@ const teachers = [
     name: "Miss Debby",
     position: "Daycare Teacher",
   },
-  {
-    image: {
-      url: MissAlda,
-      alt: "Miss Alda",
-      position: "object-center",
-    },
-    name: "Miss Alda",
-    position: "Daycare Teacher",
-  },
+
   {
     image: {
       url: MissEcha,
@@ -209,18 +210,16 @@ export default function About() {
             </span>{" "}
             has been dedicated to empowering exceptional children and
             adolescents since 2015. Originally founded as Full Heart Center, our
-            institution has evolved over the years to become a specialized
-            educational center focused on unlocking the full potential of every
-            child.
+            institution has evolved into a specialized educational center
+            focused on unlocking each {"child's"} full potential.
           </p>
           <p>
             Under the visionary leadership of the{" "}
             <span className="font-bold text-card-1 italic">late Dwi Ana</span>,
-            we underwent a rebranding in 2020 to better reflect our commitment
-            to providing comprehensive and innovative therapeutic approaches.
-            Today, Focus Learning Support Center is a beacon of hope for
-            families seeking specialized care for their children with special
-            needs.
+            we rebranded in 2020 to better reflect our commitment to providing
+            comprehensive and innovative therapeutic approaches. Today, Focus
+            Learning Support Center stands as a beacon of hope for families
+            seeking specialized care for children with special needs.
           </p>
         </div>
         <div className="mt-20 flex flex-col lg:flex-row gap-5">
@@ -279,7 +278,7 @@ export default function About() {
             </div>
             <div className="lg:w-1/2 hidden lg:block">
               <Image
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-contain object-center"
                 width={1000}
                 height={500}
                 src={coreValues}

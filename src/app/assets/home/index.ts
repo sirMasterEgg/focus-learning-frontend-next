@@ -11,7 +11,7 @@ import testimony from "./Testy - Dayu Dad.jpg";
 import testimony1 from "./Testy - Irish Mom.jpg";
 import testimony2 from "./Testy - Neo Mom.jpeg";
 import testimony3 from "./Testy - Pradipta Mom.jpeg";
-import testimony4 from "./Testy - Jobbie Dad.jpg";
+import testimony4 from "./Testy - Yudis Mom.jpeg";
 
 export {
   banner,

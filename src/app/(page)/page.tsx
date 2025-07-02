@@ -104,8 +104,8 @@ export default function Home() {
             <span className="font-bold text-card-1">
               qualified psychologist
             </span>{" "}
-            to provide personalized care tailored to individual needs and
-            learning styles.
+            to provide personalized care tailored to each child’s individual
+            needs and learning style
           </p>
         </div>
       </main>
